@@ -1,0 +1,211 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	min-width: 1024px;
+}
+
+
+.form-cont
+{
+    width: 350px;
+	margin: 0 auto;
+	margin-top: 200px;
+	padding: 15px;
+	border-radius: 12px;
+	background-color: rgba(204, 204, 204, 0.3);
+	box-shadow: -1px 11px 29px -8px rgba(0,0,0,0.55);
+}
+
+.form-cont form input
+{
+	margin-bottom: 10px;
+	margin-top: 5px;
+	width: 200px;
+}
+
+.form-cont form label
+{
+	font-size: 20px;
+
+
+}
+
+.form-cont form 
+{
+    width: 200px;
+	margin: 0 auto;
+
+}
+
+.enter  {
+
+   margin-left: 1000px;
+   margin-top: 50px;
+}
+
+.left-content {
+
+float: left;
+background-color: #32475d;
+width: 30%;
+height: 650px;
+
+
+}
+
+.main-content {
+	width: 70%;
+	float: right;
+}
+
+.menu-left-content {
+
+	margin-top: 60px;
+}
+
+.user-prof {
+
+	background-color: #35cb74;
+	height: 150px;
+	font-size: 16px;
+}
+
+.photo-user,.user-name {
+
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 50px;
+
+}
+
+
+.user-name {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.photo-user {
+	border-radius: 50%;
+	background-color: white;
+	width: 85px;
+	height: 85px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	margin-top: 30px;
+
+}
+
+.menu-left-content ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+}
+
+.menu-left-content ul li {
+	
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	margin-top: 40px;
+	padding-top: 15px;
+	padding-left: 20px;
+	height: 40px;
+	color: #6c7e8b;
+	font-size: 19px;
+	text-transform: uppercase;
+
+
+}
+
+.menu-left-content ul li:hover {
+   background-color:#1f303f;
+   color: white;
+
+}
+
+
+.menu-left-content a {
+	text-decoration: none;
+	color: white;
+
+}
+
+.menu-left-content ul li {
+	cursor:pointer;
+}
+
+.top-content {
+	height: 150px;
+	border-bottom: 1px solid #edf0f1;
+	background-color: white;
+	
+}
+
+.prof-content {
+	height: 200px;
+	background-color: white;
+}
+
+.setup {
+   background-color: #edf0f1;
+   text-align: center;
+
+}
+
+.load {
+
+	padding-top: 150px;
+}
+
+.photo-prof {
+
+	background-color: #edf0f1;
+	color: #edf0f1;
+	width: 120px;
+	height: 120px;
+}
+
+.user-prof-2 {
+
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.exit {
+
+ float: right;
+ margin-right: 50px;
+ margin-top: 30px;
+ font-size: 30px;
+
+}
+
+.exit a {
+	color: black;
+}
+
+.editor_text {
+	margin-top: 5px;
+	width: 95%;
+	height: 500px;
+}
+
+.edit_btn {
+	margin-top: 30px;
+	width: 180px;
+    height: 25px;
+}
+
+
+
+
+
+
+

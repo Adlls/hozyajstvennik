@@ -1,0 +1,24 @@
+
+@media  screen  and (max-width: 1043px) { 
+   
+  .menu-list li {
+  	//margin-right: 5%;
+  	//font-size: 10px;
+  }
+
+}
+
+
+@media  screen  and (max-width: 1290px) { 
+   
+  .menu-list li {
+  	margin-right: 3%;
+  	font-size: 18px;
+  }
+
+  .logo {
+  	font-size: 28px;
+  	color: green;
+  }
+
+}
