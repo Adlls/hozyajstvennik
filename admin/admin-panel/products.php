@@ -245,12 +245,17 @@ if ($_GET['id']!=null) {
 
 
 
+
+
+
+
+
 <div class="popup_add_product">
 	<p class="title_popup">Добавить товар</p>
 	<div class="close_popup_product">&#215;</div>
 	<div class="move_left add">&larr;</div>
 	<div class="move_right add">&rarr;</div>
-  <div class="add_markbook">Добавить вкладку</div>
+  <button class="add_markbook"> <span class="count_card">(1)</span>  Добавить вкладку</button>
 
 <form method="POST" action="products.php" id="add_form" enctype="multipart/form-data">
 
@@ -302,10 +307,10 @@ if ($_GET['id']!=null) {
 -->
 
 
-   <div class="card card_3 ppvk4675 card_add">
+   <div class="card card_3 ppvk4675 card_add" id="add_card">
    	
   <div class="form-group">
-     <input type="text" name="title_ppvk4675" style="margin-bottom: 10px;">
+     <input type="text"  class="form-control" name="title_ppvk4675" style="margin-bottom: 10px;" placeholder="Название раздела">
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="ppvkladish4675_size">
   </div>
   <div class="form-group">
@@ -329,7 +334,15 @@ if ($_GET['id']!=null) {
     <input type="file" class="form-control-file" id="formGroupExampleInput2" placeholder="Фото" name="ppvkladish4675_photo">
   </div>
 
+   <div class="page_card">1</div>
+   <button class="button_delmb" id="button_delmb_id" data-count_card>Удалить вкладку</button>
+
+
    </div>
+
+
+   
+
 
 <!--
   <div class="card card_4 ppvtermo5090 card_add">

@@ -453,7 +453,7 @@ height: 650px;
 
 .add_markbook {
   font-size: 15px;
-  left: 200px;
+  left: 190px;
   bottom: 40px;
 }
 
@@ -480,13 +480,18 @@ height: 650px;
 
 
 
-.button_createpr, .button_editpr {
-    position: absolute;
+.button_createpr, .button_editpr, .button_delmb, .add_markbook {
+  position: absolute;
 	bottom: 40px;
 	right: 250px;
 	border: 1px solid black;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+.button_delmb {
+    bottom: 0px;
+    display: none; 
 }
 
 .list_product {
@@ -554,6 +559,9 @@ height: 650px;
 
 
 
-
+.page_card {
+  position: absolute;
+  left: 0;
+}
 
 
