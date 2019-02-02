@@ -7,6 +7,7 @@
 <script src="../../scripts/jquery.js"></script>
 </head>
 <body>
+<!--
 <div class="bookmarks">
 	   <div class="group-bookmarks">
 	<div class="bookmarks-item-header bookmark first-bookmark">Редактировать шапку</div>
@@ -14,6 +15,7 @@
 	<div class="bookmarks-item-delivery bookmark">Редактировать Доставку</div>
 	  </div>
 </div>
+-->
 
 
 <div class="group-form-share"> 

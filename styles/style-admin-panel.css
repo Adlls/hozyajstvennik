@@ -444,11 +444,17 @@ height: 650px;
 	cursor: pointer;
 }
 
-.move_left,.move_right {
+.move_left,.move_right,.add_markbook {
 	font-size: 30px;
 	position: absolute;
 	bottom: 30px;
 	cursor: pointer;
+}
+
+.add_markbook {
+  font-size: 15px;
+  left: 200px;
+  bottom: 40px;
 }
 
 .move_left {

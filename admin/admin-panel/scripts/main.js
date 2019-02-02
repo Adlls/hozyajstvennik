@@ -86,7 +86,7 @@ $("#text-change").bind("click", function() {
 
 
 
-     $(".setup").load("editor.php");
+     $(".setup").load("edit_section/share-edit.php");
 
 });
 
@@ -213,33 +213,26 @@ function controlmovecard() {
 
 var cardnum = 0;
 
-$(".move_right").click(function() {
-
-    var card = document.querySelectorAll('.card');
+/*
+var card = document.querySelectorAll('.card');
     
-     cardnum = cardnum + 1;
+cardnum = cardnum + 1;
 
-     if (cardnum < 5) {
+if (cardnum < 5) {
 
-        card[cardnum].style.display = "block";
-        card[cardnum-1].style.display = "none";
-     }
-     
-
-    if (cardnum >= 5) {
-              
-       card[4].style.display = "none";
-       card[0].style.display = "block";
-       cardnum = 0;
-     }
-    
-});
+   card[cardnum].style.display = "block";
+   card[cardnum-1].style.display = "none";
+}
 
 
+if (cardnum >= 5) {
+         
+  card[4].style.display = "none";
+  card[0].style.display = "block";
+  cardnum = 0;
+}
 
-$(".move_left").click(function() {
-
-    var card = document.querySelectorAll('.card');
+var card = document.querySelectorAll('.card');
      
      cardnum = cardnum - 1;
 
@@ -255,15 +248,69 @@ $(".move_left").click(function() {
      }
 
 
+
+*/
+
+
+
+
+
+$(".move_right.add").click(function() {
+
+    var card = document.querySelectorAll('.card_add');
+    
+     cardnum = cardnum + 1;
+
+    
+   
+
+     if (cardnum < card.length) {
+
+        card[cardnum].style.display = "block";
+        card[cardnum-1].style.display = "none";
+     }
+     
+
+    if (cardnum >= card.length) {
+              
+       card[card.length-1].style.display = "none";
+       card[0].style.display = "block";
+       cardnum = 0;
+     }
+    
+});
+
+
+
+$(".move_left.add").click(function() {
+
+    var card = document.querySelectorAll('.card_add');
+     
+     cardnum = cardnum - 1;
+
+    if (cardnum >= 0) {
+     card[cardnum].style.display = "block";
+     card[cardnum+1].style.display = "none";
+  }
+
+     if (cardnum < 0) {
+        card[0].style.display = "none";
+        card[card.length-1].style.display = "block";
+        cardnum = card.length - 1;
+     }
+
+
 });
 
 var cardnum_edit = 0;
 
-$(".move_left.add").click(function() {
 
-     var card = document.querySelectorAll('.card_add');
+
+$(".move_left.edit").click(function() {
+
+     var card = document.querySelectorAll('.card_edit');
      
-     cardnum_edit = cardnum_edit - 1;
+     cardnum_edit = cardnum_edit-1;
 
     if (cardnum_edit >= 0) {
      card[cardnum_edit].style.display = "block";
@@ -272,31 +319,39 @@ $(".move_left.add").click(function() {
 
      if (cardnum_edit < 0) {
         card[0].style.display = "none";
-        card[4].style.display = "block";
-        cardnum_edit = 4;
+        card[card.length-1].style.display = "block";
+        cardnum_edit = card.length-1;
      }
 });
 
-$(".move_right.add").click(function() {
+$(".move_right.edit").click(function() {
 
-      var card = document.querySelectorAll('.card_add');
+      var card = document.querySelectorAll('.card_edit');
     
      cardnum_edit = cardnum_edit + 1;
 
-     if (cardnum_edit < 5) {
+     if (cardnum_edit < card.length) {
 
         card[cardnum_edit].style.display = "block";
         card[cardnum_edit-1].style.display = "none";
      }
      
 
-    if (cardnum_edit >= 5) {
+    if (cardnum_edit >= card.length) {
               
-       card[4].style.display = "none";
+       card[card.length-1].style.display = "none";
        card[0].style.display = "block";
        cardnum_edit = 0;
      }
 });
+
+
+$(".add_markbook").click(function () {
+     
+  $(".card.card_3.ppvk4675.card_add").clone().appendTo('.popup_add_product');
+
+});
+
 
 
 //Закрываем и открываем попупы

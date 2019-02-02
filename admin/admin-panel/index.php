@@ -26,14 +26,14 @@ if(empty($_SESSION['user'])) {
 <div class="left-content clearfix">
 
 <div class="user-prof">
-	<a href="index.php"><div class = "photo-user">фото</div></a>
+	<!--<a href="index.php"><div class = "photo-user">фото</div></a> -->
 	<div class="user-name"><?php echo $_SESSION['user']['login']; ?></div>
 	</div>
 
 	<div class="menu-left-content">
 		<ul>
-			<li id="users-show"> <i class="fa fa-list-ul" aria-hidden="true" style="padding-right: 15px;"> </i>  Список юзеров</li>
-			<li id="text-change"> <i class="fa fa-pencil" style="padding-right: 15px;" aria-hidden="true"> </i> Секскции сайта</li>
+		<!--	<li id="users-show"> <i class="fa fa-list-ul" aria-hidden="true" style="padding-right: 15px;"> </i>  Список юзеров</li> -->
+			<li id="text-change"> <i class="fa fa-list-ul" aria-hidden="true" style="padding-right: 15px;"> </i> Акции</li>
 			<li id = "catalog"> <i class="fa fa-shopping-cart" style="padding-right: 15px;" aria-hidden="true"></i></i> Список товаров</li>
 		</ul>
 		</div>
@@ -42,12 +42,12 @@ if(empty($_SESSION['user'])) {
 
 <div class="main-content clearfix">
  	
-<div class="top-content">top
+<div class="top-content">
 <?php //echo $_GET['id']."wsf"?>
 </div>
 <div class="prof-content">
 	
-	<div class = "photo-user photo-prof">фото</div>
+<!--	<div class = "photo-user photo-prof">фото</div> -->
 	<div class="user-name user-prof-2"><?php echo $_SESSION['user']['login']; ?></div>
 <div class="exit"><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> </a> </div>
 </div>

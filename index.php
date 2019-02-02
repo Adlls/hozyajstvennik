@@ -191,6 +191,7 @@ $arrshare_description = array();
 
   <div class="clearfix">
   <div class="cont-options-right">
+  <!--
       <div class="item-options show-1">
         <p class="title_pp4575">П/п (45x75)</p>
         <div class="button-item-options-show btn-show-1" data-itemop="1">Подробнее</div>
@@ -205,6 +206,7 @@ $arrshare_description = array();
         </div>
 
       </div>
+    -->
       <div class="item-options show-2">
         <p class="title_ppvk4675">П/п + ПЭ вкладыш (46x75)</p>
         <div class="contfordelt"><div class="photo-item-options" data-itemop="2"> <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,6 +216,7 @@ $arrshare_description = array();
 <path d="M26.0922 9.54584C25.2834 9.54584 24.6328 10.2011 24.6328 11.0158C24.6328 11.8305 25.2833 12.4858 26.0922 12.4858C26.901 12.4858 27.5515 11.8305 27.5515 11.0158C27.5515 10.2011 26.9009 9.54584 26.0922 9.54584ZM26.0922 11.6711C25.7229 11.6711 25.4416 11.37 25.4416 11.0158C25.4416 10.6617 25.7406 10.3606 26.0922 10.3606C26.4438 10.3606 26.7427 10.6617 26.7427 11.0158C26.7427 11.37 26.4614 11.6711 26.0922 11.6711Z" fill="#808080"/>
 </svg>
 </div></div>
+
         <div class="button-item-options-show btn-show-2" data-itemop="2">Подробнее</div>
         <div class="button-item-options-close btn-close-2" data-itemop="2">Свернуть</div>
 
@@ -230,6 +233,8 @@ $arrshare_description = array();
         </div>
 
       </div>
+
+   <!--   
       <div class="item-options show-3">
         <p class="title_pptermo5090">П/п + Термообрез (50х90)</p>
         <div class="button-item-options-show btn-show-3" data-itemop="3">Подробнее</div>
@@ -245,6 +250,8 @@ $arrshare_description = array();
 
 
       </div>
+      -->
+  <!--
       <div class="item-options show-4">
         <p class="title_pptermo55105">П/п Термообрез (55х105)</p>
         <div class="button-item-options-show btn-show-4" data-itemop="4">Подробнее</div>
@@ -260,7 +267,7 @@ $arrshare_description = array();
 
 
       </div>
-
+ -->
 
   </div>
 </div>

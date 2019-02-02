@@ -39,7 +39,7 @@ if ($_GET['id']!=null) {
 <table class="list_product">
 	
     <tr>
-		<th>Имя мешка</th>
+		<th>Имя товара</th>
 		<th class="action">Действия</th>
 		<th>id</th>
 	</tr>
@@ -93,30 +93,30 @@ if ($_GET['id']!=null) {
 <div class="popup_edit_product">
 	<p class="title_popup">Изменить товар</p>
 	<div class="close_popup_product">&#215;</div>
-	<div class="move_left">&larr;</div>
-	<div class="move_right">&rarr;</div>
+	<div class="move_left edit">&larr;</div>
+	<div class="move_right edit" >&rarr;</div>
 
 <form method="POST" action="products.php" id="edit_form" enctype="multipart/form-data">
 
    <div class="card card_1 name_desc_product card_edit">
    
   <div class="form-group">
-    <label for="exampleFormControlInput1">Название мешка</label>
+    <label for="exampleFormControlInput1">Название товара</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Мешки обыкновенные" name= "name_product" required>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Описание мешка</label>
+    <label for="exampleFormControlTextarea1">Описание товара</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Прекрасные мешки..." name="desc_product" type="text"></textarea>
   </div>
   <div class="form-group">
-  	 <label for="exampleFormControlInput2">Фото мешка</label>
+  	 <label for="exampleFormControlInput2">Фото товара</label>
     <input type="file" class="form-control-file" id="exampleFormControlInput2" placeholder="" name="photo_product">
     <div class="photo_name"></div>
      </div>
   
    </div>
 
-
+<!--
    <div class="card card_2 pp4575 card_edit">
    	
   <div class="form-group">
@@ -141,6 +141,7 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+-->
 
    <div class="card card_3 ppvk4675 card_edit">
    	
@@ -176,6 +177,7 @@ if ($_GET['id']!=null) {
 
    </div>
 
+  <!-- 
   <div class="card card_4 ppvtermo5090 card_edit">
    	
   <div class="form-group">
@@ -200,6 +202,8 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+-->
+<!--
    <div class="card card_5 ppvtermo55105 card_edit">
    		
   <div class="form-group">
@@ -224,6 +228,7 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+-->
 
 <button type="submit" name="edit_product" class="button_editpr">Изменить</button>
 <input type="hidden" name="edit" value="edit_product">
@@ -245,27 +250,31 @@ if ($_GET['id']!=null) {
 	<div class="close_popup_product">&#215;</div>
 	<div class="move_left add">&larr;</div>
 	<div class="move_right add">&rarr;</div>
+  <div class="add_markbook">Добавить вкладку</div>
 
 <form method="POST" action="products.php" id="add_form" enctype="multipart/form-data">
+
 
    <div class="card card_1 name_desc_product card_add">
    
   <div class="form-group">
-    <label for="exampleFormControlInput1">Название мешка</label>
+    <label for="exampleFormControlInput1">Название товара</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Мешки обыкновенные" name= "name_product" required>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Описание мешка</label>
+    <label for="exampleFormControlTextarea1">Описание товара</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Прекрасные мешки..." name="desc_product" type="text"></textarea>
   </div>
   <div class="form-group">
-  	 <label for="exampleFormControlInput2">Фото мешка</label>
+  	 <label for="exampleFormControlInput2">Фото товара</label>
     <input type="file" class="form-control-file" id="exampleFormControlInput2" placeholder="" name="photo_product" required>
      </div>
   
    </div>
 
 
+
+<!--
    <div class="card card_2 pp4575 card_add">
    	
   <div class="form-group">
@@ -290,6 +299,8 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+-->
+
 
    <div class="card card_3 ppvk4675 card_add">
    	
@@ -320,6 +331,7 @@ if ($_GET['id']!=null) {
 
    </div>
 
+<!--
   <div class="card card_4 ppvtermo5090 card_add">
    	
   <div class="form-group">
@@ -342,8 +354,10 @@ if ($_GET['id']!=null) {
     
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pptermo5090_supply">
   </div>
+</div>
+-->
 
-   </div>
+<!--
    <div class="card card_5 ppvtermo55105 card_add">
    		
   <div class="form-group">
@@ -368,6 +382,7 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+-->
 
 <button type="submit" name="create_product" class="button_createpr" onclick="$('.setup').load('products.php');">Создать</button>
 <input type="hidden" name="add" value="add_product">

@@ -26,6 +26,7 @@ while (($row = $result_set->fetch_assoc()) != false) { $_SESSION["text"] = $row[
 </head>
 <body>
 
+<!--
 <div class="bookmarks">
 	   <div class="group-bookmarks">
 	<div class="bookmarks-item-header bookmark first-bookmark">Редактировать шапку</div>
@@ -33,7 +34,7 @@ while (($row = $result_set->fetch_assoc()) != false) { $_SESSION["text"] = $row[
 	<div class="bookmarks-item-delivery bookmark">Редактировать Доставку</div>
 	  </div>
 </div>
-
+-->
 
 <form method="POST" action="editor.php">
 <!--
