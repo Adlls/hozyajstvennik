@@ -310,28 +310,28 @@ if ($_GET['id']!=null) {
    <div class="card card_3 ppvk4675 card_add" id="add_card" data-count_card_dv>
    	
   <div class="form-group">
-     <input type="text"  class="form-control" name="title_ppvk4675" style="margin-bottom: 10px;" placeholder="Название раздела">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="ppvkladish4675_size">
+     <input type="text"  class="form-control" name="title_ppvk4675[]" style="margin-bottom: 10px;" placeholder="Название раздела">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="ppvkladish4675_size[]">
   </div>
   <div class="form-group">
    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="ppvkladish4675_weight">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="ppvkladish4675_weight[]">
   </div>
   <div class="form-group">
   
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="ppvkladish4675_pack">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="ppvkladish4675_pack[]">
   </div>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="ppvkladish4675_price">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="ppvkladish4675_price[]">
   </div>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="ppvkladish4675_supply">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="ppvkladish4675_supply[]">
   </div>
   <div class="form-group">
     
-    <input type="file" class="form-control-file" id="formGroupExampleInput2" placeholder="Фото" name="ppvkladish4675_photo">
+    <input type="file" class="form-control-file" id="formGroupExampleInput2" placeholder="Фото" name="ppvkladish4675_photo[]">
   </div>
 
    <div class="page_card">1</div>
@@ -536,16 +536,18 @@ $mysqli->query("INSERT INTO `product` ( `name_product`, `description_product`,ph
     while (($row = $result_set->fetch_assoc()) != false) {$id = $row[id_product];} 
      
      //Добавляем его параметры и соответсвтующий id к каждой 
-    $mysqli->query("INSERT INTO `pp4575` (`size`, `weight`,`pack`,`price`,`supply`,`title_pp4575`,`product_id_product`) VALUES ('".$_POST[pp4575_size]."','".$_POST[pp4575_weight]."','".$_POST[pp4575_pack]."','".$_POST[pp4575_price]."','".$_POST[pp4575_supply]."','".$_POST['title_pp4575']."','".$id."');");
+    //$mysqli->query("INSERT INTO `pp4575` (`size`, `weight`,`pack`,`price`,`supply`,`title_pp4575`,`product_id_product`) VALUES ('".$_POST[pp4575_size]."','".$_POST[pp4575_weight]."','".$_POST[pp4575_pack]."','".$_POST[pp4575_price]."','".$_POST[pp4575_supply]."','".$_POST['title_pp4575']."','".$id."');");
 
 
+    
+    
+     for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
+         $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`) VALUES ('".$_POST[ppvkladish4675_size][$i]."','".$_POST[ppvkladish4675_weight][$i]."','".$_POST[ppvkladish4675_pack][$i]."','".$_POST[ppvkladish4675_price][$i]."','".$_POST[ppvkladish4675_supply][$i]."','".$_FILES['ppvkladish4675_photo']['name'][$i]."','".$_POST['title_ppvk4675'][$i]."','".$id."');");
+}
 
-    $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`) VALUES ('".$_POST[ppvkladish4675_size]."','".$_POST[ppvkladish4675_weight]."','".$_POST[ppvkladish4675_pack]."','".$_POST[ppvkladish4675_price]."','".$_POST[ppvkladish4675_supply]."','".$_FILES['ppvkladish4675_photo']['name']."','".$_POST['title_ppvk4675']."','".$id."');");
+   // $mysqli->query("INSERT INTO `pptermo5090` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo5090`,`product_id_product`) VALUES ('".$_POST[pptermo5090_size]."','".$_POST[pptermo5090_weight]."','".$_POST[pptermo5090_pack]."','".$_POST[pptermo5090_price]."','".$_POST[pptermo5090_supply]."','".$_POST['title_ppvtermo5090']."','".$id."');");
 
-
-    $mysqli->query("INSERT INTO `pptermo5090` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo5090`,`product_id_product`) VALUES ('".$_POST[pptermo5090_size]."','".$_POST[pptermo5090_weight]."','".$_POST[pptermo5090_pack]."','".$_POST[pptermo5090_price]."','".$_POST[pptermo5090_supply]."','".$_POST['title_ppvtermo5090']."','".$id."');");
-
-    $mysqli->query("INSERT INTO `pptermo55105` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo55105`,`product_id_product`) VALUES ('".$_POST[pptermo55105_size]."','".$_POST[pptermo55105_weight]."','".$_POST[pptermo55105_pack]."','".$_POST[pptermo55105_price]."','".$_POST[pptermo55105_supply]."','".$_POST['title_ppvtermo55105']."','".$id."');");
+   // $mysqli->query("INSERT INTO `pptermo55105` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo55105`,`product_id_product`) VALUES ('".$_POST[pptermo55105_size]."','".$_POST[pptermo55105_weight]."','".$_POST[pptermo55105_pack]."','".$_POST[pptermo55105_price]."','".$_POST[pptermo55105_supply]."','".$_POST['title_ppvtermo55105']."','".$id."');");
 
 
 
