@@ -307,7 +307,7 @@ if ($_GET['id']!=null) {
 -->
 
 
-   <div class="card card_3 ppvk4675 card_add" id="add_card">
+   <div class="card card_3 ppvk4675 card_add" id="add_card" data-count_card_dv>
    	
   <div class="form-group">
      <input type="text"  class="form-control" name="title_ppvk4675" style="margin-bottom: 10px;" placeholder="Название раздела">

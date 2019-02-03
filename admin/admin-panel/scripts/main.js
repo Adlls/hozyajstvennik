@@ -372,23 +372,26 @@ $(".add_markbook").click(function () {
   card.children('.button_delmb').css("display","block");
   $(".count_card").text("("+ (count_card.length+1) + ")");
   card.children('.button_delmb').data("count_card",""+(count_card.length+1));
+  card.data("count_card_dv",""+(count_card.length+1));
   
+  //alert(card.data("count_card_dv"));
   
+
 });
 
 $(".button_delmb").click(function () {
- // alert($(this).data("count_card"));
+
  var count_card = document.querySelectorAll('.ppvk4675.card_add'); 
-   for (var i = 0; i <= count_card.length; i++) {
-           if ( i == $(this).data("count_card")) {
-               alert(count_card.length);
-               count_card[i-1].remove();
-               alert(count_card.length);
-              // $(".count_card").text("("+ (count_card.length+1) + ")");
+ var index_btn = $(".button_delmb").index(this);
 
+   for (var i = 0; i < count_card.length; i++) {
+           if ( i == index_btn) {
+                count_card[index_btn].remove();
            }
-
    }
+
+
+   $(".count_card").text("("+ (count_card.length-1) + ")");
 
 });
 
