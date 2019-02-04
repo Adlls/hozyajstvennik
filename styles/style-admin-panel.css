@@ -479,6 +479,8 @@ height: 650px;
 }
 
 .start_card {
+  visibility: visible;
+
 }
 
 .button_createpr, .button_editpr, .button_delmb, .add_markbook {

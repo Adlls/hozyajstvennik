@@ -402,9 +402,12 @@ $(".close_popup_product").click(function() {
    $(".popup_add_product").css("display","none");
    $(".popup_edit_product").css("display","none");
    $(".button_deletephoto").val("no");
-   $(".append_card.card_edit").remove();
 
-  });
+   $(".append_card.card_edit").remove();
+   cardnum_edit = 0;
+    
+  
+});
 
 $(".close_popup_delete").click(function() {
    $(".popup_delete").css("display","none");
@@ -443,6 +446,9 @@ $(".add_product").click(function() {
 
 
 //edit form
+
+var isFirstmb = true;
+
 $(".edit_product").click(function() {
       $(".popup_edit_product").css("display","block");
       id = $(this).data("id");
@@ -500,15 +506,39 @@ $(".edit_product").click(function() {
 
                   //создаем клона аналогично тому как мы делали в прошлый раз
 
-                 // var count_card = document.querySelectorAll('.ppvk4675.card_edit'); 
+                  if (isFirstmb) {
+                    var card_first = $("#edit_card");
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
+                    card_first.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
+                    card_first.children(".form-group").children(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
+    
+                    isFirstmb = false;
+                    
+                  }
+                  else {
+  
                   var card =  $("#edit_card").clone(true).appendTo('.popup_edit_product form');
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
+                  card.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
+                  card.children(".form-group").children(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
                   card.addClass("append_card");
+
+                  }
   
   //card.children('.page_card').text(count_card.length+1);
 
                   j++;
                   console.log("id "+ products[i].product_id_product);
                   console.log(j);
+                  console.log(":"+ products[i].size);
 
 
 
@@ -545,7 +575,8 @@ $(".edit_product").click(function() {
 
            }
 
- 
+          // $(".ppvk4675.card_edit").last().remove();
+           isFirstmb = true;
  
 
 
