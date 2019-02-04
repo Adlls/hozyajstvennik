@@ -478,7 +478,8 @@ height: 650px;
 	display: none;
 }
 
-
+.start_card {
+}
 
 .button_createpr, .button_editpr, .button_delmb, .add_markbook {
   position: absolute;

@@ -401,18 +401,10 @@ $(".button_delmb").click(function () {
 $(".close_popup_product").click(function() {
    $(".popup_add_product").css("display","none");
    $(".popup_edit_product").css("display","none");
-     $(".button_deletephoto").val("no");
-   
-    // cardnum = 0;
-     
-     /*
-     cardnum_edit = 0;
-     var card = document.querySelectorAll('.card_add');
-     card[4].style.display = "none";
-     alert(cardnum_edit);
-     */
-  
-});
+   $(".button_deletephoto").val("no");
+   $(".append_card.card_edit").remove();
+
+  });
 
 $(".close_popup_delete").click(function() {
    $(".popup_delete").css("display","none");
@@ -447,6 +439,9 @@ $(".add_product").click(function() {
 
 
 
+
+
+
 //edit form
 $(".edit_product").click(function() {
       $(".popup_edit_product").css("display","block");
@@ -468,7 +463,8 @@ $(".edit_product").click(function() {
         var products = $.parseJSON(data);
         console.log($.parseJSON(data));
 
-          
+        var j = 0;
+
            for (var i = 0; i < products.length; i++) {
               if (products[i].id_product == id) {
                  
@@ -478,6 +474,8 @@ $(".edit_product").click(function() {
 
               }
 
+
+              /*
               if ((products[i].type_opt == "pp4575")
                    &&(products[i].product_id_product==id)) {
 
@@ -488,20 +486,36 @@ $(".edit_product").click(function() {
                   $(".card_edit input[name=\"pp4575_supply\"]").val(products[i].supply);
                   $(".card_edit input[name=\"title_pp4575\"]").val(products[i].title_pp4575);
                 }
-
+*/
                 if ((products[i].type_opt == "pp_vkladish4675")
                    &&(products[i].product_id_product==id)) {
 
-                  $(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
-                  $(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
-                  $(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
-                  $(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
-                  $(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
-                  $(".photo_ppvkladish4675").text(products[i].photo);
-                  $(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
+                 // $(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
+                //  $(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
+                //  $(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
+               //   $(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
+               //   $(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
+              //    $(".photo_ppvkladish4675").text(products[i].photo);
+               //   $(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
+
+                  //создаем клона аналогично тому как мы делали в прошлый раз
+
+                 // var count_card = document.querySelectorAll('.ppvk4675.card_edit'); 
+                  var card =  $("#edit_card").clone(true).appendTo('.popup_edit_product form');
+                  card.addClass("append_card");
+  
+  //card.children('.page_card').text(count_card.length+1);
+
+                  j++;
+                  console.log("id "+ products[i].product_id_product);
+                  console.log(j);
+
+
+
                 }
 
                 
+                /*
                 if ((products[i].type_opt == "pptermo5090")
                    &&(products[i].product_id_product==id)) {
 
@@ -512,7 +526,9 @@ $(".edit_product").click(function() {
                   $(".card_edit input[name=\"pptermo5090_supply\"]").val(products[i].supply);
                   $(".card_edit input[name=\"title_ppvtermo5090\"]").val(products[i].title_pptermo5090);
                 }
+*/
 
+/*
                 if ((products[i].type_opt == "pptermo55105")
                    &&(products[i].product_id_product==id)) {
 
@@ -525,7 +541,7 @@ $(".edit_product").click(function() {
 
                   console.log(products[i].product_id_product);
                 }
-
+*/
 
            }
 
@@ -540,20 +556,10 @@ $(".edit_product").click(function() {
 
 
 $(".button_deletephoto").click(function() {
-    
-
-
-  
-
   $("input[name='delete_sphoto']").val("yes");
   var name_file =  $(".photo_ppvkladish4675").text();
   $("input[name='photo_namefordel']").val(name_file);
-
-
-
-     
 });
-
 
 });
 

@@ -143,10 +143,9 @@ if ($_GET['id']!=null) {
    </div>
 -->
 
-   <div class="card card_3 ppvk4675 card_edit">
-   	
-  <div class="form-group">
-     <input type="text" name="title_ppvk4675" style="margin-bottom: 10px;">
+   <div class="card card_3 ppvk4675 card_edit start_card" id="edit_card">
+   	 <div class="form-group">
+     <input type="text" class="form-control" name="title_ppvk4675" placeholder="Название раздела" style="margin-bottom: 10px;">
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="ppvkladish4675_size">
   </div>
   <div class="form-group">
@@ -176,6 +175,9 @@ if ($_GET['id']!=null) {
   </div>
 
    </div>
+
+  
+
 
   <!-- 
   <div class="card card_4 ppvtermo5090 card_edit">
@@ -423,16 +425,16 @@ if (isset($_POST["edit_product"])) {
 
   
 
-  $mysqli->query("UPDATE `product` SET  `name_product` = '".$_POST["name_product"]."', `description_product` = '".$_POST["desc_product"]."' WHERE `id_product` = ".$_POST["get_id_product"]." "); 
+  //$mysqli->query("UPDATE `product` SET  `name_product` = '".$_POST["name_product"]."', `description_product` = '".$_POST["desc_product"]."' WHERE `id_product` = ".$_POST["get_id_product"]." "); 
 
 
-  $mysqli->query("UPDATE `pp4575` SET  `size` = '".$_POST["pp4575_size"]."', `weight` = '".$_POST["pp4575_weight"]."', `pack` = '".$_POST["pp4575_pack"]."', `price` = '".$_POST["pp4575_price"]."', `supply` = '".$_POST["pp4575_supply"]."', `title_pp4575` = '".$_POST['title_pp4575']."'  WHERE `product_id_product` = ".$_POST["get_id_product"]." "); 
+  //$mysqli->query("UPDATE `pp4575` SET  `size` = '".$_POST["pp4575_size"]."', `weight` = '".$_POST["pp4575_weight"]."', `pack` = '".$_POST["pp4575_pack"]."', `price` = '".$_POST["pp4575_price"]."', `supply` = '".$_POST["pp4575_supply"]."', `title_pp4575` = '".$_POST['title_pp4575']."'  WHERE `product_id_product` = ".$_POST["get_id_product"]." "); 
 
   $mysqli->query("UPDATE `pp_vkladish4675` SET  `size` = '".$_POST["ppvkladish4675_size"]."', `weight` = '".$_POST["ppvkladish4675_weight"]."', `pack` = '".$_POST["ppvkladish4675_pack"]."', `price` = '".$_POST["ppvkladish4675_price"]."', `supply` = '".$_POST["ppvkladish4675_supply"]."', `title_pp_vkladish4675` = '".$_POST['title_ppvk4675']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");  
 
-  $mysqli->query("UPDATE `pptermo5090` SET  `size` = '".$_POST["pptermo5090_size"]."', `weight` = '".$_POST["pptermo5090_weight"]."', `pack` = '".$_POST["pptermo5090_pack"]."', `price` = '".$_POST["pptermo5090_price"]."', `supply` = '".$_POST["pptermo5090_supply"]."', `title_pptermo5090` = '".$_POST['title_ppvtermo5090']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");
+  //$mysqli->query("UPDATE `pptermo5090` SET  `size` = '".$_POST["pptermo5090_size"]."', `weight` = '".$_POST["pptermo5090_weight"]."', `pack` = '".$_POST["pptermo5090_pack"]."', `price` = '".$_POST["pptermo5090_price"]."', `supply` = '".$_POST["pptermo5090_supply"]."', `title_pptermo5090` = '".$_POST['title_ppvtermo5090']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");
 
-  $mysqli->query("UPDATE `pptermo55105` SET  `size` = '".$_POST["pptermo55105_size"]."', `weight` = '".$_POST["pptermo55105_weight"]."', `pack` = '".$_POST["pptermo55105_pack"]."', `price` = '".$_POST["pptermo55105_price"]."', `supply` = '".$_POST["pptermo55105_supply"]."', `title_pptermo55105` = '".$_POST['title_ppvtermo55105']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");     
+  //$mysqli->query("UPDATE `pptermo55105` SET  `size` = '".$_POST["pptermo55105_size"]."', `weight` = '".$_POST["pptermo55105_weight"]."', `pack` = '".$_POST["pptermo55105_pack"]."', `price` = '".$_POST["pptermo55105_price"]."', `supply` = '".$_POST["pptermo55105_supply"]."', `title_pptermo55105` = '".$_POST['title_ppvtermo55105']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");     
 
     
 
