@@ -508,13 +508,13 @@ $(".edit_product").click(function() {
 
                   if (isFirstmb) {
                     var card_first = $("#edit_card");
-                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
-                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
-                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
-                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
-                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size[]\"]").val(products[i].size);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight[]\"]").val(products[i].weight);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack[]\"]").val(products[i].pack);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price[]\"]").val(products[i].price);
+                    card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply[]\"]").val(products[i].supply);
                     card_first.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
-                    card_first.children(".form-group").children(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
+                    card_first.children(".form-group").children(".card_edit input[name=\"title_ppvk4675[]\"]").val(products[i].title_pp_vkladish4675);
     
                     isFirstmb = false;
                     
@@ -522,13 +522,13 @@ $(".edit_product").click(function() {
                   else {
   
                   var card =  $("#edit_card").clone(true).appendTo('.popup_edit_product form');
-                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
-                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
-                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
-                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
-                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size[]\"]").val(products[i].size);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight[]\"]").val(products[i].weight);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_pack[]\"]").val(products[i].pack);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_price[]\"]").val(products[i].price);
+                  card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply[]\"]").val(products[i].supply);
                   card.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
-                  card.children(".form-group").children(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
+                  card.children(".form-group").children(".card_edit input[name=\"title_ppvk4675[]\"]").val(products[i].title_pp_vkladish4675);
                   card.addClass("append_card");
 
                   }
