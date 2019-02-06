@@ -483,13 +483,25 @@ height: 650px;
 
 }
 
-.button_createpr, .button_editpr, .button_delmb, .add_markbook {
+.button_createpr, .button_editpr, .button_delmb, .add_markbook
+, .button_delmb_edit, .button_deletephoto {
   position: absolute;
 	bottom: 40px;
 	right: 250px;
 	border: 1px solid black;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+.button_deletephoto {
+  top: 0px; 
+  cursor: pointer;
+  height: 26px;
+}
+
+.button_delmb_edit {
+  bottom: -40px;
+  right: 320px;
 }
 
 .button_delmb {

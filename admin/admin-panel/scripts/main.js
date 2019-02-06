@@ -374,9 +374,6 @@ $(".add_markbook").click(function () {
   card.children('.button_delmb').data("count_card",""+(count_card.length+1));
   card.data("count_card_dv",""+(count_card.length+1));
   
-  //alert(card.data("count_card_dv"));
-  
-
 });
 
 $(".button_delmb").click(function () {
@@ -396,6 +393,14 @@ $(".button_delmb").click(function () {
 });
 
 
+$(".button_delmb_edit").click(function() {
+   
+    $('<input>', { name: 'arr_delin[]', type: 'hidden', 'value': ($(".button_delmb_edit").index(this)) }).appendTo('.popup_edit_product form');
+    $(this).parent().parent().remove();
+
+});
+
+
 
 //Закрываем и открываем попупы
 $(".close_popup_product").click(function() {
@@ -404,6 +409,9 @@ $(".close_popup_product").click(function() {
    $(".button_deletephoto").val("no");
 
    $(".append_card.card_edit").remove();
+
+
+   $("input[name=\"arr_delin[]\"]").remove();
    cardnum_edit = 0;
     
   
@@ -411,7 +419,8 @@ $(".close_popup_product").click(function() {
 
 $(".close_popup_delete").click(function() {
    $(".popup_delete").css("display","none");
- 
+    
+
 });
 
 
@@ -448,7 +457,8 @@ $(".add_product").click(function() {
 //edit form
 
 var isFirstmb = true;
-
+var count_page = 0;
+var count_index_page = 0;
 $(".edit_product").click(function() {
       $(".popup_edit_product").css("display","block");
       id = $(this).data("id");
@@ -481,30 +491,14 @@ $(".edit_product").click(function() {
               }
 
 
-              /*
-              if ((products[i].type_opt == "pp4575")
-                   &&(products[i].product_id_product==id)) {
-
-                  $(".card_edit input[name=\"pp4575_size\"]").val(products[i].size);
-                  $(".card_edit input[name=\"pp4575_weight\"]").val(products[i].weight);
-                  $(".card_edit input[name=\"pp4575_pack\"]").val(products[i].pack);
-                  $(".card_edit input[name=\"pp4575_price\"]").val(products[i].price);
-                  $(".card_edit input[name=\"pp4575_supply\"]").val(products[i].supply);
-                  $(".card_edit input[name=\"title_pp4575\"]").val(products[i].title_pp4575);
-                }
-*/
                 if ((products[i].type_opt == "pp_vkladish4675")
                    &&(products[i].product_id_product==id)) {
 
-                 // $(".card_edit input[name=\"ppvkladish4675_size\"]").val(products[i].size);
-                //  $(".card_edit input[name=\"ppvkladish4675_weight\"]").val(products[i].weight);
-                //  $(".card_edit input[name=\"ppvkladish4675_pack\"]").val(products[i].pack);
-               //   $(".card_edit input[name=\"ppvkladish4675_price\"]").val(products[i].price);
-               //   $(".card_edit input[name=\"ppvkladish4675_supply\"]").val(products[i].supply);
-              //    $(".photo_ppvkladish4675").text(products[i].photo);
-               //   $(".card_edit input[name=\"title_ppvk4675\"]").val(products[i].title_pp_vkladish4675);
 
-                  //создаем клона аналогично тому как мы делали в прошлый раз
+                    count_page++;
+                    count_index_page = count_page - 1;
+
+                    console.log(count_page);
 
                   if (isFirstmb) {
                     var card_first = $("#edit_card");
@@ -515,12 +509,12 @@ $(".edit_product").click(function() {
                     card_first.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply[]\"]").val(products[i].supply);
                     card_first.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
                     card_first.children(".form-group").children(".card_edit input[name=\"title_ppvk4675[]\"]").val(products[i].title_pp_vkladish4675);
-    
+                    card_first.children(".form-group").children(".page_card").text(count_page);
+                    card_first.children(".button_delmb_edit").data("count_card_edit",""+count_index_page);
+
                     isFirstmb = false;
-                    
                   }
                   else {
-  
                   var card =  $("#edit_card").clone(true).appendTo('.popup_edit_product form');
                   card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_size[]\"]").val(products[i].size);
                   card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_weight[]\"]").val(products[i].weight);
@@ -529,60 +523,21 @@ $(".edit_product").click(function() {
                   card.children(".form-group").children(".card_edit input[name=\"ppvkladish4675_supply[]\"]").val(products[i].supply);
                   card.children(".form-group").children(".photo_ppvkladish4675").text(products[i].photo);
                   card.children(".form-group").children(".card_edit input[name=\"title_ppvk4675[]\"]").val(products[i].title_pp_vkladish4675);
+                  card.children(".form-group").children(".page_card").text(count_page);
+                  card.children(".button_delmb_edit").data("count_card_edit",""+count_index_page);
+       
                   card.addClass("append_card");
 
                   }
-  
-  //card.children('.page_card').text(count_card.length+1);
-
                   j++;
-                  console.log("id "+ products[i].product_id_product);
-                  console.log(j);
-                  console.log(":"+ products[i].size);
-
-
-
+                //  console.log("id "+ products[i].product_id_product);
+                //  console.log(j);
+               //   console.log(":"+ products[i].size);
                 }
-
-                
-                /*
-                if ((products[i].type_opt == "pptermo5090")
-                   &&(products[i].product_id_product==id)) {
-
-                  $(".card_edit input[name=\"pptermo5090_size\"]").val(products[i].size);
-                  $(".card_edit input[name=\"pptermo5090_weight\"]").val(products[i].weight);
-                  $(".card_edit input[name=\"pptermo5090_pack\"]").val(products[i].pack);
-                  $(".card_edit input[name=\"pptermo5090_price\"]").val(products[i].price);
-                  $(".card_edit input[name=\"pptermo5090_supply\"]").val(products[i].supply);
-                  $(".card_edit input[name=\"title_ppvtermo5090\"]").val(products[i].title_pptermo5090);
-                }
-*/
-
-/*
-                if ((products[i].type_opt == "pptermo55105")
-                   &&(products[i].product_id_product==id)) {
-
-                  $(".card_edit input[name=\"pptermo55105_size\"]").val(products[i].size);
-                  $(".card_edit input[name=\"pptermo55105_weight\"]").val(products[i].weight);
-                  $(".card_edit input[name=\"pptermo55105_pack\"]").val(products[i].pack);
-                  $(".card_edit input[name=\"pptermo55105_price\"]").val(products[i].price);
-                  $(".card_edit input[name=\"pptermo55105_supply\"]").val(products[i].supply);
-                  $(".card_edit input[name=\"title_ppvtermo55105\"]").val(products[i].title_pptermo55105);
-
-                  console.log(products[i].product_id_product);
-                }
-*/
-
            }
-
-          // $(".ppvk4675.card_edit").last().remove();
            isFirstmb = true;
- 
-
-
+           count_page = 0;
           }
-
-
      });
 
 
@@ -593,6 +548,10 @@ $(".button_deletephoto").click(function() {
 });
 
 });
+
+
+
+
 
 });
 

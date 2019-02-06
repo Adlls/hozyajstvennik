@@ -144,34 +144,39 @@ if ($_GET['id']!=null) {
 -->
 
    <div class="card card_3 ppvk4675 card_edit start_card" id="edit_card">
+
    	 <div class="form-group">
      <input type="text" class="form-control" name="title_ppvk4675[]" placeholder="Название раздела" style="margin-bottom: 10px;">
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="ppvkladish4675_size[]">
-  </div>
-  <div class="form-group">
+    </div>
+    <div class="form-group">
    
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="ppvkladish4675_weight[]">
-  </div>
-  <div class="form-group">
+    </div>
+    <div class="form-group">
   
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="ppvkladish4675_pack[]">
-  </div>
-  <div class="form-group">
+    </div>
+    <div class="form-group">
+     
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="ppvkladish4675_price[]">
+      </div>
+      <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="ppvkladish4675_price[]">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="ppvkladish4675_supply[]">
-  </div>
-  <div class="form-group" style="position: relative;">
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="ppvkladish4675_supply[]">
+    </div>
+    <div class="form-group" style="position: relative;">
     
     <input type="file" class="form-control-file" id="formGroupExampleInput2" placeholder="Фото" name="ppvkladish4675_photo[]">
     
-     <button type="button" class="button_deletephoto" value="no" placeholder="удалить" style="position: absolute; top: 0px; cursor: pointer;">Удалить</button>
+     <button type="button" class="button_deletephoto" value="no" placeholder="удалить фото">Удалить фото</button>
      <input type="hidden" name="delete_sphoto" value="no">
      <input type="hidden" name="photo_namefordel" value="">
     <div class="photo_ppvkladish4675"></div>
+   
+    <div class="page_card">1</div>
+   <button type="button" class="button_delmb_edit" data-count_card_edit>Удалить вкладку</button>
+
   </div>
 
    </div>
@@ -420,6 +425,7 @@ if ($_GET['id']!=null) {
 //Редактируем продукт
 
 
+
 if (isset($_POST["edit_product"])) {
      
 
@@ -440,10 +446,15 @@ if (isset($_POST["edit_product"])) {
         
 
         for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
-
+          
           $mysqli->query("UPDATE `pp_vkladish4675` SET  `size` = '".$_POST["ppvkladish4675_size"][$i]."', `weight` = '".$_POST["ppvkladish4675_weight"][$i]."', `pack` = '".$_POST["ppvkladish4675_pack"][$i]."', `price` = '".$_POST["ppvkladish4675_price"][$i]."', `supply` = '".$_POST["ppvkladish4675_supply"][$i]."', `title_pp_vkladish4675` = '".$_POST['title_ppvk4675'][$i]."' WHERE `product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$count." ");  
           $count++;
           
+        }
+        for ($i=0; $i < count($_POST[arr_delin]); $i++) { 
+          
+          $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
+
         }
 
       }
