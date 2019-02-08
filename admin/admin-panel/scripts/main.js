@@ -452,6 +452,7 @@ $(".close_popup_product").click(function() {
 
 
    $("input[name=\"arr_delin[]\"]").remove();
+   $("input[name=\"arr_addin[]\"]").remove();
    cardnum_edit = 0;
     
   
