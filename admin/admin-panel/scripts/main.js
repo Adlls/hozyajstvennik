@@ -410,9 +410,9 @@ $(".edit_markbook").click(function () {
   card.children(".form-group").children(".card_edit input").val("");
 
 
-  $('<input>', { name: 'arr_addin[]', type: 'hidden', 'value': count_card.length }).appendTo('.popup_edit_product form');
+  $('<input>', { name: 'arr_addin[]', type: 'hidden', 'value': count_card.length }).appendTo('.popup_edit_product form .group_add');
   //$(this).parent().parent().remove();
-
+   
   
 });
 

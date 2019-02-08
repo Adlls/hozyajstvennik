@@ -242,7 +242,7 @@ if ($_GET['id']!=null) {
 <button type="submit" name="edit_product" class="button_editpr">Изменить</button>
 <input type="hidden" name="edit" value="edit_product">
 <input type="hidden" name="get_id_product">
-
+<div class="group_add"></div>
 </form>
 </div>
 
@@ -451,26 +451,17 @@ if (isset($_POST["edit_product"])) {
           $count++;
           
         }
-        //удаляем вкладку
-        for ($i=0; $i < count($_POST[arr_delin]); $i++) { 
-          
-          $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
-
-        }
-
-        //добавляем вкладку
-
-      //  $count++;
-        for ($i=$_POST[arr_addin][0]; $i < $_POST[arr_addin][count($_POST[arr_addin])]; $i++) { 
-          $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$i]."','".$_POST[ppvkladish4675_weight][$i]."','".$_POST[ppvkladish4675_pack][$i]."','".$_POST[ppvkladish4675_price][$i]."','".$_POST[ppvkladish4675_supply][$i]."','".$_FILES['ppvkladish4675_photo']['name'][$i]."','".$_POST['title_ppvk4675'][$i]."','".$_POST["get_id_product"]."','".$_POST[arr_addin][$i]."');");
-         
-
-        }
-
       }
     }
 
-
+  //добавляем вкладку
+    foreach ($_POST[arr_addin] as $value) {
+      $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$value]."','".$_POST[ppvkladish4675_weight][$value]."','".$_POST[ppvkladish4675_pack][$value]."','".$_POST[ppvkladish4675_price][$value]."','".$_POST[ppvkladish4675_supply][$value]."','".$_FILES['ppvkladish4675_photo']['name'][$value]."','".$_POST['title_ppvk4675'][$value]."','".$_POST["get_id_product"]."','".$value."');");
+      }
+     //удаляем вкладку
+      for ($i=0; $i < count($_POST[arr_delin]); $i++) {   
+        $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
+      }
 
 
   
