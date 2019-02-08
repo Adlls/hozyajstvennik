@@ -484,7 +484,7 @@ height: 650px;
 }
 
 .button_createpr, .button_editpr, .button_delmb, .add_markbook
-, .button_delmb_edit, .button_deletephoto {
+, .button_delmb_edit, .button_deletephoto, .edit_markbook {
   position: absolute;
 	bottom: 40px;
 	right: 250px;
@@ -502,6 +502,10 @@ height: 650px;
 .button_delmb_edit {
   bottom: -40px;
   right: 320px;
+}
+
+.edit_markbook {
+  right: 350px;
 }
 
 .button_delmb {

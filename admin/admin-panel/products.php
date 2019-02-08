@@ -95,6 +95,8 @@ if ($_GET['id']!=null) {
 	<div class="close_popup_product">&#215;</div>
 	<div class="move_left edit">&larr;</div>
 	<div class="move_right edit" >&rarr;</div>
+  <button class="edit_markbook"> <span class="count_card"></span>  Добавить вкладку</button>
+
 
 <form method="POST" action="products.php" id="edit_form" enctype="multipart/form-data">
 
@@ -423,9 +425,6 @@ if ($_GET['id']!=null) {
 
 <?php 
 //Редактируем продукт
-
-
-
 if (isset($_POST["edit_product"])) {
      
 
@@ -445,15 +444,26 @@ if (isset($_POST["edit_product"])) {
       if ($_POST["get_id_product"] == $row[product_id_product]) {
         
 
+        //обнавляем влкадку
         for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
           
           $mysqli->query("UPDATE `pp_vkladish4675` SET  `size` = '".$_POST["ppvkladish4675_size"][$i]."', `weight` = '".$_POST["ppvkladish4675_weight"][$i]."', `pack` = '".$_POST["ppvkladish4675_pack"][$i]."', `price` = '".$_POST["ppvkladish4675_price"][$i]."', `supply` = '".$_POST["ppvkladish4675_supply"][$i]."', `title_pp_vkladish4675` = '".$_POST['title_ppvk4675'][$i]."' WHERE `product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$count." ");  
           $count++;
           
         }
+        //удаляем вкладку
         for ($i=0; $i < count($_POST[arr_delin]); $i++) { 
           
           $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
+
+        }
+
+        //добавляем вкладку
+
+      //  $count++;
+        for ($i=$_POST[arr_addin][0]; $i < $_POST[arr_addin][count($_POST[arr_addin])]; $i++) { 
+          $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$i]."','".$_POST[ppvkladish4675_weight][$i]."','".$_POST[ppvkladish4675_pack][$i]."','".$_POST[ppvkladish4675_price][$i]."','".$_POST[ppvkladish4675_supply][$i]."','".$_FILES['ppvkladish4675_photo']['name'][$i]."','".$_POST['title_ppvk4675'][$i]."','".$_POST["get_id_product"]."','".$_POST[arr_addin][$i]."');");
+         
 
         }
 

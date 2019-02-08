@@ -339,6 +339,16 @@ $(".move_left.edit").click(function() {
         card[card.length-1].style.display = "block";
         cardnum_edit = card.length-1;
      }
+  
+     if (cardnum_edit > 0) {
+      $(".edit_markbook").css("display","none");
+    }
+    else {
+     $(".edit_markbook").css("display","block");
+
+    }
+
+
 });
 
 $(".move_right.edit").click(function() {
@@ -360,6 +370,16 @@ $(".move_right.edit").click(function() {
        card[0].style.display = "block";
        cardnum_edit = 0;
      }
+
+     if (cardnum_edit > 0) {
+      $(".edit_markbook").css("display","none");
+    }
+    else {
+     $(".edit_markbook").css("display","block");
+
+    }
+
+
 });
 
 
@@ -373,6 +393,26 @@ $(".add_markbook").click(function () {
   $(".count_card").text("("+ (count_card.length+1) + ")");
   card.children('.button_delmb').data("count_card",""+(count_card.length+1));
   card.data("count_card_dv",""+(count_card.length+1));
+  
+});
+
+
+$(".edit_markbook").click(function () {
+  var count_card = document.querySelectorAll('.ppvk4675.card_edit'); 
+  var card =  $("#edit_card").clone(true).appendTo('.popup_edit_product form');
+
+  
+  card.children(".form-group").children('.page_card').text(count_card.length+1);
+  card.children('.button_delmb').css("display","block");
+  $(".count_card").text("("+ (count_card.length+1) + ")");
+  card.children('.button_delmb').data("count_card",""+(count_card.length+1));
+  card.data("count_card_dv",""+(count_card.length+1));
+  card.children(".form-group").children(".card_edit input").val("");
+
+
+  $('<input>', { name: 'arr_addin[]', type: 'hidden', 'value': count_card.length }).appendTo('.popup_edit_product form');
+  //$(this).parent().parent().remove();
+
   
 });
 
