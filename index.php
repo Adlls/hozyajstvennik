@@ -182,7 +182,7 @@ $arrshare_description = array();
   <div class="clearfix">
   <div class="cont-options-right">
      <?php while (($row = $result_set_ppvkladish->fetch_assoc()) != false): ?>
-      <div class="item-options show-2" data-idproduct= <?="\"".$row['product_id_product']."\"" ?> >
+      <div class="item-options show-2" data-idproduct= <?="\"".$row['product_id_product']."\"" ?>>
         <p class="title_ppvk4675"><?= $row['title_pp_vkladish4675'] ?></p>
         <div class="contfordelt"><div class="photo-item-options" data-itemop="2"> <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M27.7099 5.34848L24.3516 5.33079L21.1341 0.495869C20.9406 0.194772 20.6066 0 20.2549 0H11.5868C11.2352 0 10.9187 0.194835 10.7253 0.478179L7.40225 5.33079L4.29016 5.34848C1.93409 5.34848 0 7.29664 0 9.66979V23.6433C0 26.0165 1.93409 28 4.29009 28H27.7099C30.066 28 32 26.0165 32 23.6433V9.66979C32.0001 7.29664 30.066 5.34848 27.7099 5.34848ZM29.8902 23.6433C29.8902 24.8476 28.9055 25.8748 27.71 25.8748H4.29016C3.09453 25.8748 2.10995 24.8476 2.10995 23.6433V9.66979C2.10995 8.46546 3.09459 7.47373 4.29016 7.47373H7.96491C8.31658 7.47373 8.63306 7.27889 8.82643 6.99555L12.1495 2.14293H19.6924L22.8924 6.96017C23.0858 7.24351 23.4199 7.43835 23.7539 7.43835L27.6924 7.47379C28.888 7.47379 29.8726 8.46559 29.8726 9.66985V23.6433H29.8902V23.6433Z" fill="#808080"/>
@@ -196,15 +196,15 @@ $arrshare_description = array();
         <div class="button-item-options-show btn-show-2" data-itemop="2">Подробнее</div>
         <div class="button-item-options-close btn-close-2" data-itemop="2">Свернуть</div>
 
-        <div class="contforphoto">
-          
-        </div>
+      
+        <div class="contforphoto" data-secph=<?="\"".$row['photo']."\"" ?> ></div>
+  
          <div class="group-options group-options-2">
-      <div><h5>Размер, см </h5> <div class="line-inner" style="width: 58%;"></div><span class="paramsop paramsop-optionts-2"></span><?= $row['size'] ?></div>
-      <div><h5>Вес, грамм</h5> <div class="line-inner" style="width: 55%;"></div> <span class="paramsop paramsop-optionts-2"></span><?= $row['weight'] ?></div>
-      <div><h5>Упаковка, штук</h5> <div class="line-inner" style="width: 55%;"></div><span class="paramsop paramsop-optionts-2"></span><?= $row['pack'] ?></div>
-      <div><h5>Цена, рублей/штука</h5> <div class="line-inner" style="width: 40%"></div><span class="paramsop paramsop-optionts-2"></span><?= $row['price'] ?></div>
-      <div><h5>Оптовые поставки</h5> <div class="line-inner" style="width: 13%;"></div><span class="paramsop paramsop-optionts-2"></span><?= $row['supply'] ?></div>
+      <div><h5>Размер, см </h5> <div class="line-inner" style="width: 58%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['size'] ?></span></div>
+      <div><h5>Вес, грамм</h5> <div class="line-inner" style="width: 55%;"></div> <span class="paramsop paramsop-optionts-2"><?= $row['weight'] ?></span></div>
+      <div><h5>Упаковка, штук</h5> <div class="line-inner" style="width: 55%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['pack'] ?></span></div>
+      <div><h5>Цена, рублей/штука</h5> <div class="line-inner" style="width: 40%"></div><span class="paramsop paramsop-optionts-2"><?= $row['price'] ?></span></div>
+      <div><h5>Оптовые поставки</h5> <div class="line-inner" style="width: 13%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['supply'] ?></span></div>
         </div>
       
       </div>

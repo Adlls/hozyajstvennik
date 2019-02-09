@@ -628,8 +628,8 @@ $(".aboutprod").click(function() {
  var description = document.querySelector('div.optiontd p');
  description.innerHTML = ""+($(this).data("dproduct"))+"";
  //Вставляем вторую фотку
-  var secphoto = $(this).data("secphoto");
-  $(".contforphoto").css("background-image","url("+secphoto+")");
+//  var secphoto = $(this).data("secphoto");
+ // $(".contforphoto").css("background-image","url("+secphoto+")");
 
    //$(this).data("")
 
@@ -641,71 +641,6 @@ $.each( option_items, function( i, val ) {
 
 });
 
-
-    //Собираем данные про данный твоар
-    /*
-    var arr_1 = new Array(
-      $(this).data("size-1"),
-      $(this).data("weight-1"),
-      $(this).data("thing-1"),
-      $(this).data("price-1"),
-      $(this).data("whole-1"));
-
-    var arr_2 = new Array(
-      $(this).data("size-2"),
-      $(this).data("weight-2"),
-      $(this).data("thing-2"),
-      $(this).data("price-2"),
-      $(this).data("whole-2"));
-
-     var arr_3 = new Array(
-      $(this).data("size-3"),
-      $(this).data("weight-3"),
-      $(this).data("thing-3"),
-      $(this).data("price-3"),
-      $(this).data("whole-3"));
-
-     var arr_4 = new Array(
-      $(this).data("size-4"),
-      $(this).data("weight-4"),
-      $(this).data("price-4"),
-      $(this).data("thing-4"),
-      $(this).data("whole-4"));
-
-     //Массив массивов :)
-     var arrayofdata = new Array(arr_1,arr_2,arr_3,arr_4);
-
-
-var paramsop_optionts_1  = document.querySelectorAll('.paramsop-optionts-1');
-var paramsop_optionts_2  = document.querySelectorAll('.paramsop-optionts-2');
-var paramsop_optionts_3  = document.querySelectorAll('.paramsop-optionts-3');
-var paramsop_optionts_4  = document.querySelectorAll('.paramsop-optionts-4');
-
-//Собираем все ссылки на теги в массив
-var array_paramsop_optionts = new Array(
-document.querySelectorAll('.paramsop-optionts-1'),
-document.querySelectorAll('.paramsop-optionts-2'),
-document.querySelectorAll('.paramsop-optionts-3'),
-document.querySelectorAll('.paramsop-optionts-4')
-  );
-
-for (var j = 0; array_paramsop_optionts.length > j; j++) {
-   
-   for (var i = 0; paramsop_optionts_1.length > i; i++) {
-        
-       var param = array_paramsop_optionts[j];
-       var data = arrayofdata[j];
-        param[i].innerHTML = ""+data[i];
-}
-
-}
- 
- $(".contforphoto").css("background-image","url("+$(this).data("photovkladish4675")+")");
- $(".title_pp4575").text($(this).data("title-1"));
- $(".title_ppvk4675").text($(this).data("title-2"));
- $(".title_pptermo5090").text($(this).data("title-3"));
- $(".title_pptermo55105").text($(this).data("title-4"));
-*/
 
 });
 
@@ -734,68 +669,22 @@ var btn_n = $(".button-item-options-show");
 $.each( btn_n, function( i, val ) {
  $(this).parent("div.show-2").removeClass("active");
  $(this).siblings(".group-options-2").css("display","none");
+ $(this).siblings(".contfordelt").children(".photo-item-options").css("display","none");
+ $(".photo-item-options svg path").css("fill","#808080");
+ $(this).siblings(".contforphoto").css("display","none");
+ $(".show-2 p").css("border-bottom", "0px solid rgba(128, 128, 128, 0.3)");
 });
 
 
 $(this).parent("div.show-2").addClass("active");
 $(this).siblings(".group-options-2").css("display","block");
 $(this).siblings(".button-item-options-close").css("display","block");
+$(this).siblings(".contfordelt").children(".photo-item-options").css("display","block");
 $(this).css("display","none");
+$(".show-2 p").css("border-bottom", "1px solid rgba(128, 128, 128, 0.3)");
 
-
-/*
-    var count = $(this).data("itemop");
-
-   if (count == 2) {
-                $(".photo-item-options").css("display", "block");
-              }
-             
-
-
-
-
-     for (var i = 1; i <= 4; i++) {
+ 
         
-        if (count == i) {
-
-          if (!isfirst) {
-            var countold = document.querySelector('div.show-'+oldc);
-            countold.className = countold.className.replace("active","");
-            countold.style.height = "45px";
-             $(".btn-show-"+oldc).css("display","block");
-             $(".btn-close-"+oldc).css("display","none");
-              $(".show-"+oldc+" p").css("border-bottom", "none");
-              $(".group-options-"+oldc).css("display", "none");
-              $(".contforphoto").css("display","none");
-
-
-          }
-        
-         var countnew = document.querySelector('div.show-'+count);
-         oldc = count;
-         countnew.className += " active";
-         
-        
-    
-       $(".active").animate({
-           height: "300px"
-           }, 300 );
-      
-     isfirst = false;
-
-    $(".btn-show-"+count).css("display","none");
-    $(".btn-close-"+count).css("display","block");
-    $(".show-"+count+" p").css("border-bottom", "1px solid rgba(128, 128, 128, 0.3)");
-    $(".group-options-"+count).css("display", "block");
-
-        
-   }
-
-   }
-*/
-   
-
-
 });
 
 
@@ -804,62 +693,46 @@ $(".button-item-options-close").click(function() {
   $(this).parent("div.show-2").removeClass("active");
   $(this).siblings(".group-options-2").css("display","none");
   $(this).siblings(".button-item-options-show").css("display","block");
+  $(this).siblings(".contfordelt").children(".photo-item-options").css("display","none");
+  $(".show-2 p").css("border-bottom", "0px solid rgba(128, 128, 128, 0.3)");
+  $(".photo-item-options svg path").css("fill","#808080");
+  $(this).siblings(".contforphoto").css("display","none");
   $(this).css("display","none");
 
 
-  /*
-     var count = $(this).data("itemop");
-     $(".show-"+count).animate({
-           height: "45px"
-           }, 300 );
-
-   var oldc = $(this).data("itemop");
-   var countold = document.querySelector('div.show-'+oldc);
-    countold.className = countold.className.replace("active","");
   
-  $(".button-item-options-show").css("display","block");
-  $(".button-item-options-close").css("display","none");
-  $(".item-options p").css("border-bottom", "none");
-  $(".group-options").css("display", "none");
-  $(".photo-item-options svg path").css("fill","#808080");
-  $(".contforphoto").css("display","none");
-  $(".photo-item-options").css("display", "none");
-*/
-
 
 
 });
 
 
-var activephoto = true;
+var activephoto = false;
 
-$(".photo-item-options").click(function() {
+$(".contfordelt").click(function() {
  
-  
-   
-    
-    $(".group-options-2").css("display","none");
-    var item_2 = document.querySelector('div.show-2');
-     
-     if(item_2.classList.contains('active')) {
-                  activephoto = !activephoto;
-                  $(".photo-item-options svg path").css("fill","#C20000");
-                  $(".contforphoto").css("display","block");
+ $(".photo-item-options svg path").css("fill","#C20000");
+ $(this).siblings(".contforphoto").css("display","block");
+ $(this).siblings(".group-options-2").css("display","none");
+ 
 
-               
 
-                    if (activephoto) {
-             $(".group-options-2").css("display","block");
-             $(".contforphoto").css("display","none");
-             $(".photo-item-options svg path").css("fill","#808080");
-          }
-          
-            }
-        
+ if (!activephoto) {
+  $(".photo-item-options svg path").css("fill","#C20000");
+  $(this).siblings(".contforphoto").css("display","block");
+  $(this).siblings(".group-options-2").css("display","none");
+  activephoto = true;
+ }
+  else {
+    $(".photo-item-options svg path").css("fill","#808080");
+    $(this).siblings(".contforphoto").css("display","none");
+    $(this).siblings(".group-options-2").css("display","block");
+    activephoto = false;
+  }
+
+  var photo = $(this).siblings(".contforphoto").data("secph")
+  $(".contforphoto").css("background-image","url(admin/admin-panel/i/"+photo+")");
 
 });
-
-
 
 
 
