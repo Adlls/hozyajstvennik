@@ -181,7 +181,6 @@ height: 650px;
 }
 
 .bookmarks {
-	//border: 2px solid black;
 	height: 50px;
 }
 
@@ -190,7 +189,6 @@ height: 650px;
   border: 1px solid black;
   border-top: 0px;
   width: 23.33333%;
-  //height: inherit;
   margin-left: 50px;
   padding-top: 5px;
   padding-left: 10px;
@@ -213,7 +211,6 @@ height: 650px;
 }
 
 .group-bookmarks {
-	//border: 2px solid black;
 	display: inline-block;
 	height: inherit;
 }
@@ -224,7 +221,6 @@ height: 650px;
 
 .group-form-header {
 	margin-top: 80px;
-	//border: 2px solid black;
 	text-align: center;
 }
 
@@ -233,10 +229,9 @@ height: 650px;
 	height: 30px;
 	font-size: 17px;
 	margin-bottom: 30px;
-    padding-left: 15px;
+  padding-left: 15px;
 
 }
-
 .form-header input[type="submit"] {
 	background-color: white;
 	border: 1px solid black;

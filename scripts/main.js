@@ -609,6 +609,11 @@ $("#form-col-1").submit(function() {
 
 $(".aboutprod").click(function() {
 
+
+  var btn_data = $(this).data("idproduct");
+
+  
+
   $(".gradient-products").css("width",""+($(".frame_pr").css("width"))); 
   $(".group-product").css("display","none");
   $(".options_product").css("display","block");
@@ -626,7 +631,19 @@ $(".aboutprod").click(function() {
   var secphoto = $(this).data("secphoto");
   $(".contforphoto").css("background-image","url("+secphoto+")");
 
+   //$(this).data("")
+
+var option_items = $(".item-options.show-2");
+$.each( option_items, function( i, val ) {
+ if (btn_data == $(this).data("idproduct")) {
+      $(this).css("display","block");
+ }
+
+});
+
+
     //Собираем данные про данный твоар
+    /*
     var arr_1 = new Array(
       $(this).data("size-1"),
       $(this).data("weight-1"),
@@ -688,17 +705,18 @@ for (var j = 0; array_paramsop_optionts.length > j; j++) {
  $(".title_ppvk4675").text($(this).data("title-2"));
  $(".title_pptermo5090").text($(this).data("title-3"));
  $(".title_pptermo55105").text($(this).data("title-4"));
+*/
 
 });
 
 
 var isabout = false;
-
 $(".backto").click(function() {
   $(".options_product").css("display","none");
   $(".group-product").css("display","block");
   $(".gradient-products").css("width",""+($(".group-product").css("width"))); 
   isabout = false;
+  $(".item-options.show-2").css("display","none");
 
 });
 
@@ -708,14 +726,24 @@ $(".backto").click(function() {
 
 var oldc;
 var isfirst = true;
- $(".photo-item-options").css("display", "none");
+$(".photo-item-options").css("display", "none");
+
 $(".button-item-options-show").click(function() {
     
+var btn_n = $(".button-item-options-show");
+$.each( btn_n, function( i, val ) {
+ $(this).parent("div.show-2").removeClass("active");
+ $(this).siblings(".group-options-2").css("display","none");
+});
 
 
+$(this).parent("div.show-2").addClass("active");
+$(this).siblings(".group-options-2").css("display","block");
+$(this).siblings(".button-item-options-close").css("display","block");
+$(this).css("display","none");
 
 
-
+/*
     var count = $(this).data("itemop");
 
    if (count == 2) {
@@ -764,7 +792,7 @@ $(".button-item-options-show").click(function() {
    }
 
    }
-
+*/
    
 
 
@@ -773,8 +801,13 @@ $(".button-item-options-show").click(function() {
 
 $(".button-item-options-close").click(function() {
 
+  $(this).parent("div.show-2").removeClass("active");
+  $(this).siblings(".group-options-2").css("display","none");
+  $(this).siblings(".button-item-options-show").css("display","block");
+  $(this).css("display","none");
 
 
+  /*
      var count = $(this).data("itemop");
      $(".show-"+count).animate({
            height: "45px"
@@ -791,6 +824,9 @@ $(".button-item-options-close").click(function() {
   $(".photo-item-options svg path").css("fill","#808080");
   $(".contforphoto").css("display","none");
   $(".photo-item-options").css("display", "none");
+*/
+
+
 
 });
 

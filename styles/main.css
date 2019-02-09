@@ -1,8 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-    //min-width: 1024px;
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -30,7 +29,6 @@ background: #C20000; /* Firefox */
    position: fixed;
    z-index: 100;
    height: 110px;
-   //width: 80%;
    top: 0px;
    left: 0px;
    right: 0px;
@@ -1562,6 +1560,15 @@ textarea:-ms-input-placeholder      {color: #808080;  opacity: 0.3;}
 }
 
 
+.active {
+  height: 300px; 
+  transition: 0.5s;
+}
+
+
+.item-options.show-2 {
+  display: none;
+}
 
 
 
