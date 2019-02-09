@@ -60,13 +60,6 @@ if ($_GET['id']!=null) {
 
 
     <?php endwhile; ?>
-<!--
-		<td>Мешок ебаный</td>
-		<td class="action">Выкинуть нахуй</td>
-		<td>-10</td>
-
-	-->
-	
 
 
 </table>
@@ -100,7 +93,7 @@ if ($_GET['id']!=null) {
 
 <form method="POST" action="products.php" id="edit_form" enctype="multipart/form-data">
 
-   <div class="card card_1 name_desc_product card_edit">
+   <div class="card card_1 name_desc_product card_edit start_editfr">
    
   <div class="form-group">
     <label for="exampleFormControlInput1">Название товара</label>
@@ -118,32 +111,7 @@ if ($_GET['id']!=null) {
   
    </div>
 
-<!--
-   <div class="card card_2 pp4575 card_edit">
-   	
-  <div class="form-group">
-     <input type="text" name="title_pp4575" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pp4575_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pp4575_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pp4575_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pp4575_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pp4575_supply">
-  </div>
 
-   </div>
--->
 
    <div class="card card_3 ppvk4675 card_edit start_card" id="edit_card">
 
@@ -183,62 +151,6 @@ if ($_GET['id']!=null) {
 
    </div>
 
-  
-
-
-  <!-- 
-  <div class="card card_4 ppvtermo5090 card_edit">
-   	
-  <div class="form-group">
-     <input type="text" name="title_ppvtermo5090" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pptermo5090_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pptermo5090_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pptermo5090_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pptermo5090_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pptermo5090_supply">
-  </div>
-
-   </div>
--->
-<!--
-   <div class="card card_5 ppvtermo55105 card_edit">
-   		
-  <div class="form-group">
-     <input type="text" name="title_ppvtermo55105" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pptermo55105_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pptermo55105_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pptermo55105_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pptermo55105_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pptermo55105_supply">
-  </div>
-
-   </div>
--->
-
 <button type="submit" name="edit_product" class="button_editpr">Изменить</button>
 <input type="hidden" name="edit" value="edit_product">
 <input type="hidden" name="get_id_product">
@@ -249,13 +161,6 @@ if ($_GET['id']!=null) {
 
 
 <!-- end edit -->
-
-
-
-
-
-
-
 
 
 
@@ -285,35 +190,6 @@ if ($_GET['id']!=null) {
      </div>
   
    </div>
-
-
-
-<!--
-   <div class="card card_2 pp4575 card_add">
-   	
-  <div class="form-group">
-     <input type="text" name="title_pp4575" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pp4575_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pp4575_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pp4575_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pp4575_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pp4575_supply">
-  </div>
-
-   </div>
--->
 
 
    <div class="card card_3 ppvk4675 card_add" id="add_card" data-count_card_dv>
@@ -350,62 +226,6 @@ if ($_GET['id']!=null) {
    </div>
 
 
-   
-
-
-<!--
-  <div class="card card_4 ppvtermo5090 card_add">
-   	
-  <div class="form-group">
-      <input type="text" name="title_ppvtermo5090" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pptermo5090_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pptermo5090_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pptermo5090_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pptermo5090_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pptermo5090_supply">
-  </div>
-</div>
--->
-
-<!--
-   <div class="card card_5 ppvtermo55105 card_add">
-   		
-  <div class="form-group">
-      <input type="text" name="title_ppvtermo55105" style="margin-bottom: 10px;">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Размер, см" name="pptermo55105_size">
-  </div>
-  <div class="form-group">
-   
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Вес, грамм" name="pptermo55105_weight">
-  </div>
-  <div class="form-group">
-  
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Упаковка, штук" name="pptermo55105_pack">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Цена, рублей/штука" name="pptermo55105_price">
-  </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Оптовые поставки" name="pptermo55105_supply">
-  </div>
-
-   </div>
--->
-
 <button type="submit" name="create_product" class="button_createpr" onclick="$('.setup').load('products.php');">Создать</button>
 <input type="hidden" name="add" value="add_product">
 
@@ -427,13 +247,8 @@ if ($_GET['id']!=null) {
 //Редактируем продукт
 if (isset($_POST["edit_product"])) {
      
-
   
-
   $mysqli->query("UPDATE `product` SET  `name_product` = '".$_POST["name_product"]."', `description_product` = '".$_POST["desc_product"]."' WHERE `id_product` = ".$_POST["get_id_product"]." "); 
-
-
-  //$mysqli->query("UPDATE `pp4575` SET  `size` = '".$_POST["pp4575_size"]."', `weight` = '".$_POST["pp4575_weight"]."', `pack` = '".$_POST["pp4575_pack"]."', `price` = '".$_POST["pp4575_price"]."', `supply` = '".$_POST["pp4575_supply"]."', `title_pp4575` = '".$_POST['title_pp4575']."'  WHERE `product_id_product` = ".$_POST["get_id_product"]." "); 
 
     
   $count = 0;
@@ -463,15 +278,6 @@ if (isset($_POST["edit_product"])) {
         $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
       }
 
-
-  
-  //$mysqli->query("UPDATE `pptermo5090` SET  `size` = '".$_POST["pptermo5090_size"]."', `weight` = '".$_POST["pptermo5090_weight"]."', `pack` = '".$_POST["pptermo5090_pack"]."', `price` = '".$_POST["pptermo5090_price"]."', `supply` = '".$_POST["pptermo5090_supply"]."', `title_pptermo5090` = '".$_POST['title_ppvtermo5090']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");
-
-  //$mysqli->query("UPDATE `pptermo55105` SET  `size` = '".$_POST["pptermo55105_size"]."', `weight` = '".$_POST["pptermo55105_weight"]."', `pack` = '".$_POST["pptermo55105_pack"]."', `price` = '".$_POST["pptermo55105_price"]."', `supply` = '".$_POST["pptermo55105_supply"]."', `title_pptermo55105` = '".$_POST['title_ppvtermo55105']."' WHERE `product_id_product` = ".$_POST["get_id_product"]." ");     
-
-    
-
-
     
     $path = 'i/';
  // Обработка запроса
@@ -485,11 +291,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 else {
-	
-	//echo 'Загрузка удачна';
-
-
-
 
 }
 
@@ -500,9 +301,6 @@ if ($_FILES['photo_product']['size'] > 0) {
   }
 
 }
-
-
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
@@ -515,8 +313,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 else {
 	
-	//echo 'Загрузка удачна';
-
 }
 
 
@@ -570,23 +366,12 @@ $mysqli->query("INSERT INTO `product` ( `name_product`, `description_product`,ph
     $result_set = $mysqli->query("SELECT * FROM `product`");
     while (($row = $result_set->fetch_assoc()) != false) {$id = $row[id_product];} 
      
-     //Добавляем его параметры и соответсвтующий id к каждой 
-    //$mysqli->query("INSERT INTO `pp4575` (`size`, `weight`,`pack`,`price`,`supply`,`title_pp4575`,`product_id_product`) VALUES ('".$_POST[pp4575_size]."','".$_POST[pp4575_weight]."','".$_POST[pp4575_pack]."','".$_POST[pp4575_price]."','".$_POST[pp4575_supply]."','".$_POST['title_pp4575']."','".$id."');");
 
-
-    
-    
      $count = 0;
      for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
          $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$i]."','".$_POST[ppvkladish4675_weight][$i]."','".$_POST[ppvkladish4675_pack][$i]."','".$_POST[ppvkladish4675_price][$i]."','".$_POST[ppvkladish4675_supply][$i]."','".$_FILES['ppvkladish4675_photo']['name'][$i]."','".$_POST['title_ppvk4675'][$i]."','".$id."','".$count."');");
          $count++;
 }
-
-   // $mysqli->query("INSERT INTO `pptermo5090` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo5090`,`product_id_product`) VALUES ('".$_POST[pptermo5090_size]."','".$_POST[pptermo5090_weight]."','".$_POST[pptermo5090_pack]."','".$_POST[pptermo5090_price]."','".$_POST[pptermo5090_supply]."','".$_POST['title_ppvtermo5090']."','".$id."');");
-
-   // $mysqli->query("INSERT INTO `pptermo55105` (`size`, `weight`,`pack`,`price`,`supply`,`title_pptermo55105`,`product_id_product`) VALUES ('".$_POST[pptermo55105_size]."','".$_POST[pptermo55105_weight]."','".$_POST[pptermo55105_pack]."','".$_POST[pptermo55105_price]."','".$_POST[pptermo55105_supply]."','".$_POST['title_ppvtermo55105']."','".$id."');");
-
-
 
 $path = 'i/';
  // Обработка запроса
@@ -610,9 +395,6 @@ else {
 }
 
 
-
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
 
@@ -628,54 +410,13 @@ else {
 
 }
 
-
-
 }
  
-
 $mysqli->close();
  exit;
 
 
 }
-
-
-
-
-
-
-
-
-
-/*
-for ($i=0; $i < count($arrsize); $i++) { 
-     
-     $lines = explode(" ", $arrsize[i]);
-foreach ($lines as $line) {
-    // работаем с каждой строкой по отдельности
-    echo $line;
-    }
-
-
-}
-*/
-
-/*
-$lines = explode(" ", $for40x60);
-foreach ($lines as $line) {
-    // работаем с каждой строкой по отдельности
-    echo $line;
-    }
-*/
-
-
-
-
-//придумал решение, конечно не лучшее но все же, содал таблицу в бд, 
-//где ячейки по размерам, туда добавляем 3 слова через 1 ПРОБЕЛ. Это важно
-// Далее в php сплитим эти слова по пробелам и сохраняем в отдельные ячейки
-// массива. Дальше остается придумать как сохранить эти данные обтрано в бд,
-// скорее всего примерно таким же способом
 
 ?>
 

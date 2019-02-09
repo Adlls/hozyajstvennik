@@ -448,6 +448,7 @@ $(".close_popup_product").click(function() {
    $(".popup_edit_product").css("display","none");
    $(".button_deletephoto").val("no");
 
+   $(".card_edit").css("display","none");
    $(".append_card.card_edit").remove();
 
 
@@ -501,6 +502,7 @@ var isFirstmb = true;
 var count_page = 0;
 var count_index_page = 0;
 $(".edit_product").click(function() {
+      $(".start_editfr").css("display","block");
       $(".popup_edit_product").css("display","block");
       id = $(this).data("id");
       $("input[name=\"get_id_product\"]").val(id);

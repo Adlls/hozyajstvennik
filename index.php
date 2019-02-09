@@ -200,11 +200,11 @@ $arrshare_description = array();
         <div class="contforphoto" data-secph=<?="\"".$row['photo']."\"" ?> ></div>
   
          <div class="group-options group-options-2">
-      <div><h5>Размер, см </h5> <div class="line-inner" style="width: 58%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['size'] ?></span></div>
-      <div><h5>Вес, грамм</h5> <div class="line-inner" style="width: 55%;"></div> <span class="paramsop paramsop-optionts-2"><?= $row['weight'] ?></span></div>
-      <div><h5>Упаковка, штук</h5> <div class="line-inner" style="width: 55%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['pack'] ?></span></div>
-      <div><h5>Цена, рублей/штука</h5> <div class="line-inner" style="width: 40%"></div><span class="paramsop paramsop-optionts-2"><?= $row['price'] ?></span></div>
-      <div><h5>Оптовые поставки</h5> <div class="line-inner" style="width: 13%;"></div><span class="paramsop paramsop-optionts-2"><?= $row['supply'] ?></span></div>
+      <div><h5>Размер, см </h5> <span class="paramsop paramsop-optionts-2"><?= $row['size'] ?></span></div>
+      <div><h5>Вес, грамм</h5>  <span class="paramsop paramsop-optionts-2"><?= $row['weight'] ?></span></div>
+      <div><h5>Упаковка, штук</h5> <span class="paramsop paramsop-optionts-2"><?= $row['pack'] ?></span></div>
+      <div><h5>Цена, рублей/штука</h5> <span class="paramsop paramsop-optionts-2"><?= $row['price'] ?></span></div>
+      <div><h5>Оптовые поставки</h5> <span class="paramsop paramsop-optionts-2"><?= $row['supply'] ?></span></div>
         </div>
       
       </div>
