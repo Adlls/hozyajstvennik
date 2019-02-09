@@ -263,14 +263,6 @@ $arrshare_description = array();
  <div class="frame-slide-share">
     <div class="viewport-share">
 
-
-<!--
-
-if (!($photo_share["photo_share".$i] == "" 
-              && $title_share["title_share".$i] == "" 
-              && $description_share["description_share".$i] == "")) {
--->
-
   <?php for ($i = 0; $i < $count_share; $i++): ?>
 
     <?php if (!($arrshare_photo[$i] == "" && $arrshare_title[$i] == "" && $arrshare_description[$i] == "")): ?>

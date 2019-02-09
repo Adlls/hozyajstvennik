@@ -673,6 +673,10 @@ $.each( btn_n, function( i, val ) {
  $(".photo-item-options svg path").css("fill","#808080");
  $(this).siblings(".contforphoto").css("display","none");
  $(".show-2 p").css("border-bottom", "0px solid rgba(128, 128, 128, 0.3)");
+ $(this).siblings(".button-item-options-close").css("display","none");
+ $(".button-item-options-close").css("display","none");
+ $(".button-item-options-show").css("display","block");
+
 });
 
 

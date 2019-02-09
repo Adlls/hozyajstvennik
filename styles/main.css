@@ -831,12 +831,15 @@ background: #C20000; /* Firefox */
 .item-options p {
 	margin: 0px;
 	padding: 0px;
-   line-height: 45px; 
-   color: #808080;
-   font-size: 18px;
-   font-weight: 700;
-   width: 90%;
-   margin: 0 auto;
+  line-height: 45px; 
+  color: #808080;
+  font-size: 18px;
+  font-weight: 700;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 10px;
+  top: 0px;
 }
 
 .button-item-options-show,
@@ -877,6 +880,7 @@ background: #C20000; /* Firefox */
    margin: 0 auto;
    margin-top: 20px;
    display: none;
+   padding-top: 60px;
 }
 
 .group-options h5 {
@@ -911,7 +915,7 @@ background: #C20000; /* Firefox */
 
 .photo-item-options {
 	position: absolute;
-	top: -38px;
+	top: 5px;
 	right: 0px;
 	cursor: pointer;
 }
