@@ -162,7 +162,7 @@ $arrshare_description = array();
 
 <section class="products frame-cont">
 
-<div class="gradient-products"></div>
+<!-- <div class="gradient-products"></div> -->
 
 <div class="frame_contact  frame_pr">
 

@@ -116,7 +116,7 @@ $(".bookmarks-item-delivery").bind("click", function() {
 
 
 var count_elem = $(".autoinc").text();
-//alert(parseInt(count_elem));
+
 
 $(".add_share").click(function(){
     
@@ -139,45 +139,20 @@ $(".add_share").click(function(){
  $(".save_share").click(function(){
   
   var len = document.querySelectorAll('.share_item');
-  //alert(len.length);
+
 });
 
 
 
 
 
-//alert(fileval);
+
 
 
 //Обрабатываем кнопку для редактора в файле editor.php
 
 
-/*
- $(".edit_btn").bind("click",function() {
 
-   var text_edited = $(".editor_text").text();
-
-   $(".editor_text").text(text_edited);
-
-   $.ajax({
-    
-    url: "paste_text.php",
-    type: "POST",
-    data:({text_paste: text_edited}),
-    success: isFine
-
-   });
-
-
- });
-*/
-/*
-
- $("body").keyup(function(e) {
-
-         alert(e.which);
-});
-*/
 
 $('.description-header').on('keydown', function( e ) {
   if( e.keyCode === 13 ) {
@@ -213,43 +188,7 @@ function controlmovecard() {
 
 var cardnum = 0;
 
-/*
-var card = document.querySelectorAll('.card');
-    
-cardnum = cardnum + 1;
 
-if (cardnum < 5) {
-
-   card[cardnum].style.display = "block";
-   card[cardnum-1].style.display = "none";
-}
-
-
-if (cardnum >= 5) {
-         
-  card[4].style.display = "none";
-  card[0].style.display = "block";
-  cardnum = 0;
-}
-
-var card = document.querySelectorAll('.card');
-     
-     cardnum = cardnum - 1;
-
-    if (cardnum >= 0) {
-     card[cardnum].style.display = "block";
-     card[cardnum+1].style.display = "none";
-  }
-
-     if (cardnum < 0) {
-        card[0].style.display = "none";
-        card[4].style.display = "block";
-        cardnum = 4;
-     }
-
-
-
-*/
 
 
 
@@ -411,7 +350,7 @@ $(".edit_markbook").click(function () {
 
 
   $('<input>', { name: 'arr_addin[]', type: 'hidden', 'value': count_card.length }).appendTo('.popup_edit_product form .group_add');
-  //$(this).parent().parent().remove();
+
    
   
 });
@@ -573,9 +512,7 @@ $(".edit_product").click(function() {
 
                   }
                   j++;
-                //  console.log("id "+ products[i].product_id_product);
-                //  console.log(j);
-               //   console.log(":"+ products[i].size);
+              
                 }
            }
            isFirstmb = true;
@@ -585,10 +522,24 @@ $(".edit_product").click(function() {
 
 
 $(".button_deletephoto").click(function() {
-  $("input[name='delete_sphoto']").val("yes");
-  var name_file =  $(".photo_ppvkladish4675").text();
-  $("input[name='photo_namefordel']").val(name_file);
+ 
+ var photo_name = $(this).siblings(".photo_ppvkladish4675").text();
+ var count_page = parseInt($(this).siblings(".page_card").text())-1;
+alert(photo_name);
+alert(count_page);
+ $('<input>', { name: 'arr_delphoto_name[]', type: 'hidden', 'value': (photo_name) }).appendTo('.popup_edit_product form');
+ $('<input>', { name: 'arr_delphoto_count[]', type: 'hidden', 'value': (count_page) }).appendTo('.popup_edit_product form');
+
+
 });
+
+$(".addphoto_btn").click(function() {
+  var count_page = parseInt($(this).siblings(".page_card").text())-1;
+  $('<input>', { name: 'arr_addphoto_count[]', type: 'hidden', 'value': (count_page) }).appendTo('.popup_edit_product form');
+
+
+});
+
 
 });
 
