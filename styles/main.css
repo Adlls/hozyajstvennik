@@ -925,9 +925,10 @@ background: #C20000; /* Firefox */
 .contforphoto {
 	display: none;
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	height: 250px;
+	background-position:  bottom center;
+	background-size: 200px;
+  height: 250px;
+  
 }
 
 

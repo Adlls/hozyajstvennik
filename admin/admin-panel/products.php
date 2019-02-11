@@ -7,6 +7,10 @@ if (isset($_POST["edit_product"])) {
 	header("Location: index.php");
 }
 
+if (isset($_POST["sub_pdf"])) {
+	header("Location: index.php");
+}
+
 if ($_GET['id']!=null) {
 	header("Location: index.php");
 }
@@ -31,7 +35,7 @@ if ($_GET['id']!=null) {
 
 
 <div class="clearfix">
-<button class="add_product">Добавить продукт</button>
+<button class="add_product form-control">Добавить продукт</button>
 </div>
 
 
@@ -140,6 +144,7 @@ if ($_GET['id']!=null) {
     <input type="file" class="form-control-file addphoto_btn" id="formGroupExampleInput2" placeholder="Фото" name="ppvkladish4675_photo[]">
     
      <button type="button" class="button_deletephoto" value="no" placeholder="удалить фото">Удалить фото</button>
+
     
     <div class="photo_ppvkladish4675"></div>
    
@@ -233,7 +238,14 @@ if ($_GET['id']!=null) {
 <div id="someid"></div>
 </div>
 
-
+<form method="POST" action="products.php" enctype="multipart/form-data">
+<div class="cont_pdf">
+  <div class="titpdf">прайс-лист(pdf)</div>
+<input type="file" name="pdf" class="download_pdf">
+<div class="paste_name_pdf"></div> 
+<button class="btn_pdf form-control" type="submit" name="sub_pdf">Сохранить</button>
+</div>
+</form>
 
 <script src="scripts/main.js"></script>
 </body>
@@ -243,6 +255,32 @@ if ($_GET['id']!=null) {
 
 
 <?php 
+
+//Загружаем pdf
+if (isset($_POST["sub_pdf"])) {
+
+    $path = '../../';
+ // Обработка запроса
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+ // Загрузка файла и вывод сообщения
+ if (!@copy($_FILES['pdf']['tmp_name'], $path . $_FILES['pdf']['name'])) {
+     echo 'kek';
+}
+
+else {
+  
+}
+
+if ($_FILES['pdf']['size'] > 0) {
+  rename($path . $_FILES['pdf']['name'], $path . "hoz.pdf");
+  }
+
+}
+
+}
+
+
+
 //Редактируем продукт
 if (isset($_POST["edit_product"])) {
      

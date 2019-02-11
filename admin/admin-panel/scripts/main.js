@@ -525,8 +525,8 @@ $(".button_deletephoto").click(function() {
  
  var photo_name = $(this).siblings(".photo_ppvkladish4675").text();
  var count_page = parseInt($(this).siblings(".page_card").text())-1;
-alert(photo_name);
-alert(count_page);
+//alert(photo_name);
+//alert(count_page);
  $('<input>', { name: 'arr_delphoto_name[]', type: 'hidden', 'value': (photo_name) }).appendTo('.popup_edit_product form');
  $('<input>', { name: 'arr_delphoto_count[]', type: 'hidden', 'value': (count_page) }).appendTo('.popup_edit_product form');
 
@@ -537,8 +537,15 @@ $(".addphoto_btn").click(function() {
   var count_page = parseInt($(this).siblings(".page_card").text())-1;
   $('<input>', { name: 'arr_addphoto_count[]', type: 'hidden', 'value': (count_page) }).appendTo('.popup_edit_product form');
 
+});
+
 
 });
+
+
+$(".download_pdf").click(function() {
+  
+  $(this).val("kek");
 
 
 });

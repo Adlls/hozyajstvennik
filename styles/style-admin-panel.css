@@ -383,7 +383,8 @@ height: 650px;
 .add_product {
 	margin-top: 50px;
 	margin-left: 50px;
-	float: left;
+  float: left;
+  width: 30%;
 
 }
 
@@ -579,3 +580,21 @@ height: 650px;
 }
 
 
+.cont_pdf {
+  position: relative;
+  width: 30%;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.btn_pdf {
+  width: 150px;
+  height: 35px;
+  margin-top: 35px;
+}
+
+.titpdf {
+  position: absolute;
+  left:-5px; 
+top:-30px; 
+}
