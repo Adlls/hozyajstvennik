@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../../styles/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../../styles/style-admin-panel.css">
 <script src="../../scripts/jquery.js"></script>
 </head>

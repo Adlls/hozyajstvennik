@@ -910,13 +910,13 @@ background: #C20000; /* Firefox */
 
 .contfordelt {
 	width: 60%;
-	position: relative;
+ 
 }
 
 .photo-item-options {
-	position: absolute;
-	top: 5px;
-	right: 0px;
+  margin: auto;
+  position: absolute;
+  left: 50%; bottom: 10px; right: 0;
 	cursor: pointer;
 }
 .photo-item-options svg path  {

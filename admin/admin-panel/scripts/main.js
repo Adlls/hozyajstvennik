@@ -63,6 +63,7 @@ $("#users-show").bind("click", function() {
 });
 
 
+//$(".setup").load("products.php");
 $("#catalog").bind("click", function() {
   
  
@@ -82,6 +83,8 @@ $("#catalog").bind("click", function() {
 });
 
 
+
+//$(".setup").load("edit_section/share-edit.php");
 $("#text-change").bind("click", function() {
 
 
@@ -545,8 +548,7 @@ $(".addphoto_btn").click(function() {
 
 $(".download_pdf").click(function() {
   
-  $(this).val("kek");
-
+ 
 
 });
 

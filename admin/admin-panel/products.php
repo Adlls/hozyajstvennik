@@ -101,11 +101,11 @@ if ($_GET['id']!=null) {
    
   <div class="form-group">
     <label for="exampleFormControlInput1">Название товара</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Мешки обыкновенные" name= "name_product" required>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Введите название товара..." name= "name_product" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Описание товара</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Прекрасные мешки..." name="desc_product" type="text"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Введите описание товара..." name="desc_product" type="text"></textarea>
   </div>
   <div class="form-group">
   	 <label for="exampleFormControlInput2">Фото товара</label>
@@ -182,11 +182,11 @@ if ($_GET['id']!=null) {
    
   <div class="form-group">
     <label for="exampleFormControlInput1">Название товара</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Мешки обыкновенные" name= "name_product" required>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Введите название товара..." name= "name_product" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Описание товара</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Прекрасные мешки..." name="desc_product" type="text"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Введите описание товара..." name="desc_product" type="text"></textarea>
   </div>
   <div class="form-group">
   	 <label for="exampleFormControlInput2">Фото товара</label>
@@ -333,7 +333,7 @@ else {
 
 if ($_FILES['photo_product']['size'] > 0) {
   	    
-  	    $mysqli->query("UPDATE `product` SET `photo`= '".$_FILES["photo_product"]['name']."' ");
+  	    $mysqli->query("UPDATE `product` SET `photo`= '".$_FILES["photo_product"]['name']."' WHERE `id_product` = ".$_POST["get_id_product"]." ");
 
   }
 
@@ -341,8 +341,9 @@ if ($_FILES['photo_product']['size'] > 0) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
-
- if (!@copy($_FILES['ppvkladish4675_photo']['tmp_name'], $path . $_FILES['ppvkladish4675_photo']['name'])) {
+for ($i=0; $i < count($_FILES['ppvkladish4675_photo']) ; $i++) { 
+  # code...
+ if (!@copy($_FILES['ppvkladish4675_photo']['tmp_name'][$i], $path . $_FILES['ppvkladish4675_photo']['name'][$i])) {
 
      //echo 'Что-то пошло не так';
     // $_FILES["ppvkladish4675_photo"]['name'] = "";
@@ -352,8 +353,9 @@ else {
 	
 }
 
+}
 
-
+//echo $_FILES['ppvkladish4675_photo']['tmp_name'][0]."kek";
 
 
 
@@ -469,11 +471,14 @@ $path = 'i/';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
 
+
+
  if (!@copy($_FILES['photo_product']['tmp_name'], $path . $_FILES['photo_product']['name'])) {
 
      echo 'Что-то пошло не так';
      $_FILES["photo_product"]['name'] = "";
 }
+ 
 
 else {
 	
@@ -488,16 +493,18 @@ else {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
-
- if (!@copy($_FILES['ppvkladish4675_photo']['tmp_name'], $path . $_FILES['ppvkladish4675_photo']['name'])) {
+ for($i = 0; $i < count($_FILES["ppvkladish4675_photo"]); $i++) {
+ if (!@copy($_FILES["ppvkladish4675_photo"]['tmp_name'][$i], $path . $_FILES["ppvkladish4675_photo"]['name'][$i])) {
 
      echo 'Что-то пошло не так';
-     $_FILES["ppvkladish4675_photo"]['name'] = "";
+    // $_FILES["ppvkladish4675_photo"]['name'] = "";
 }
 
 else {
 	
 	echo 'Загрузка удачна';
+
+}
 
 }
 
