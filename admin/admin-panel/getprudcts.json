@@ -5,6 +5,7 @@
 {"id_product":"119","name_product":"testtest","description_product":"","photo":"emoji-mosaic.jpg"},
 {"id_product":"120","name_product":"ппппппп","description_product":"","photo":"adlanvika.jpg"},
 {"id_product":"121","name_product":"ЕщеодинТестик","description_product":"ТТТТТ","photo":"adlanvika.jpg"},
+{"id_product":"122","name_product":"test_final","description_product":"test","photo":"adlanvika.jpg"},
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"234","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"3","product_id_product":"115"},
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"235","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"4","product_id_product":"115"},
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"236","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"5","product_id_product":"115"},
@@ -33,4 +34,11 @@
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"269","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"1","product_id_product":"121"},
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"285","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"2","product_id_product":"121"},
 {"type_opt":"pp_vkladish4675","id_ppvkladish4675":"289","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"5","product_id_product":"121"},
-{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"290","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"6","product_id_product":"121"}]
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"290","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"6","product_id_product":"121"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"292","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"2","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"293","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"3","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"294","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"4","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"296","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"6","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"297","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"7","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"298","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"8","product_id_product":"122"},
+{"type_opt":"pp_vkladish4675","id_ppvkladish4675":"299","size":"","weight":"","pack":"","price":"","supply":"","photo":"","title_pp_vkladish4675":"9","product_id_product":"122"}]

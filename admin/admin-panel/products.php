@@ -4,7 +4,7 @@ if (isset($_POST["create_product"])) {
 }
 
 if (isset($_POST["edit_product"])) {
-	//header("Location: index.php");
+	header("Location: index.php");
 }
 
 if (isset($_POST["sub_pdf"])) {
@@ -364,13 +364,17 @@ while (($row = $result_set->fetch_assoc()) != false) {
    $result_set = $mysqli->query("SELECT * FROM `pp_vkladish4675`");
    while (($row = $result_set->fetch_assoc()) != false) {
         //обнавляем влкадку
-        //изменить надо этот кусок кода, из-за него у нас проблемы с удалением вкладки
-        //count($_row[product_id_product])?
+        //подумать над $count
+     
+        if($row[product_id_product]==$_POST['get_id_product']) {
+
+
         for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
           $mysqli->query("UPDATE `pp_vkladish4675` SET  `size` = '".$_POST["ppvkladish4675_size"][$i]."', `weight` = '".$_POST["ppvkladish4675_weight"][$i]."', `pack` = '".$_POST["ppvkladish4675_pack"][$i]."', `price` = '".$_POST["ppvkladish4675_price"][$i]."', `supply` = '".$_POST["ppvkladish4675_supply"][$i]."', `title_pp_vkladish4675` = '".$_POST['title_ppvk4675'][$i]."' WHERE `product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$count." ");  
           $count++;
         }
-        $count = 0;
+        //$count = 0;
+      }
     }
 
 
