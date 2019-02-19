@@ -4,7 +4,7 @@ if (isset($_POST["create_product"])) {
 }
 
 if (isset($_POST["edit_product"])) {
-	header("Location: index.php");
+	//header("Location: index.php");
 }
 
 if (isset($_POST["sub_pdf"])) {
@@ -256,6 +256,39 @@ if ($_GET['id']!=null) {
 
 <?php 
 
+
+
+
+
+//Нумерация для поля count
+$id_n = $mysqli->query("SELECT `product_id_product` FROM `pp_vkladish4675` ")->fetch_assoc();
+$isid_now = $id_n[product_id_product];
+$count = 0;
+
+$result_set = $mysqli->query("SELECT * FROM `pp_vkladish4675`");
+while (($row = $result_set->fetch_assoc()) != false) {
+  
+  if($isid_now != $row[product_id_product]) {
+           
+    $isid_now = $row[product_id_product];
+    $count = 0;
+    $mysqli->query("UPDATE `pp_vkladish4675` SET  `count` = '".$count."' WHERE `id_ppvkladish4675` = '".$row[id_ppvkladish4675]."' "); 
+    $count++;
+  } 
+  else {
+    $mysqli->query("UPDATE `pp_vkladish4675` SET  `count` = '".$count."' WHERE `id_ppvkladish4675` = '".$row[id_ppvkladish4675]."' "); 
+    //echo $count."str";
+    $count++;
+
+
+
+  }
+}
+
+
+
+
+
 //Загружаем pdf
 if (isset($_POST["sub_pdf"])) {
 
@@ -264,7 +297,7 @@ if (isset($_POST["sub_pdf"])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
  if (!@copy($_FILES['pdf']['tmp_name'], $path . $_FILES['pdf']['name'])) {
-     echo 'kek';
+     //echo 'kek';
 }
 
 else {
@@ -283,37 +316,67 @@ if ($_FILES['pdf']['size'] > 0) {
 
 //Редактируем продукт
 if (isset($_POST["edit_product"])) {
-     
   
   $mysqli->query("UPDATE `product` SET  `name_product` = '".$_POST["name_product"]."', `description_product` = '".$_POST["desc_product"]."' WHERE `id_product` = ".$_POST["get_id_product"]." "); 
 
-    
-  $count = 0;
+  
 
+       //добавляем вкладку
+       foreach ($_POST[arr_addin] as $value) {
+        $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$value]."','".$_POST[ppvkladish4675_weight][$value]."','".$_POST[ppvkladish4675_pack][$value]."','".$_POST[ppvkladish4675_price][$value]."','".$_POST[ppvkladish4675_supply][$value]."','".$_FILES['ppvkladish4675_photo']['name'][$value]."','".$_POST['title_ppvk4675'][$value]."','".$_POST["get_id_product"]."','".$value."');");
+        }
+    
+       //удаляем вкладку
+        foreach ($_POST[arr_delin] as $val_del) {
+          $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$val_del."");
+          //count_num();
+
+          //Нумерация для поля count
+$id_n = $mysqli->query("SELECT `product_id_product` FROM `pp_vkladish4675` ")->fetch_assoc();
+$isid_now = $id_n[product_id_product];
+$count = 0;
+
+$result_set = $mysqli->query("SELECT * FROM `pp_vkladish4675`");
+while (($row = $result_set->fetch_assoc()) != false) {
+  
+  if($isid_now != $row[product_id_product]) {
+           
+    $isid_now = $row[product_id_product];
+    $count = 0;
+    $mysqli->query("UPDATE `pp_vkladish4675` SET  `count` = '".$count."' WHERE `id_ppvkladish4675` = '".$row[id_ppvkladish4675]."' "); 
+    $count++;
+  } 
+  else {
+    $mysqli->query("UPDATE `pp_vkladish4675` SET  `count` = '".$count."' WHERE `id_ppvkladish4675` = '".$row[id_ppvkladish4675]."' "); 
+    //echo $count."str";
+    $count++;
+
+
+
+  }
+}
+    
+          echo $val_del."str";
+        }
+
+
+  $count = 0;
    $result_set = $mysqli->query("SELECT * FROM `pp_vkladish4675`");
    while (($row = $result_set->fetch_assoc()) != false) {
-    
-      if ($_POST["get_id_product"] == $row[product_id_product]) {
-        
-
         //обнавляем влкадку
+        //изменить надо этот кусок кода, из-за него у нас проблемы с удалением вкладки
+        //count($_row[product_id_product])?
         for ($i=0; $i < count($_POST[ppvkladish4675_size]); $i++) { 
-          
           $mysqli->query("UPDATE `pp_vkladish4675` SET  `size` = '".$_POST["ppvkladish4675_size"][$i]."', `weight` = '".$_POST["ppvkladish4675_weight"][$i]."', `pack` = '".$_POST["ppvkladish4675_pack"][$i]."', `price` = '".$_POST["ppvkladish4675_price"][$i]."', `supply` = '".$_POST["ppvkladish4675_supply"][$i]."', `title_pp_vkladish4675` = '".$_POST['title_ppvk4675'][$i]."' WHERE `product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$count." ");  
           $count++;
-          
         }
-      }
+        $count = 0;
     }
 
-  //добавляем вкладку
-    foreach ($_POST[arr_addin] as $value) {
-      $mysqli->query("INSERT INTO `pp_vkladish4675` (`size`,`weight`,`pack`,`price`,`supply`,`photo`,`title_pp_vkladish4675`,`product_id_product`, `count`) VALUES ('".$_POST[ppvkladish4675_size][$value]."','".$_POST[ppvkladish4675_weight][$value]."','".$_POST[ppvkladish4675_pack][$value]."','".$_POST[ppvkladish4675_price][$value]."','".$_POST[ppvkladish4675_supply][$value]."','".$_FILES['ppvkladish4675_photo']['name'][$value]."','".$_POST['title_ppvk4675'][$value]."','".$_POST["get_id_product"]."','".$value."');");
-      }
-     //удаляем вкладку
-      for ($i=0; $i < count($_POST[arr_delin]); $i++) {   
-        $mysqli->query("DELETE FROM `pp_vkladish4675` WHERE `pp_vkladish4675`.`product_id_product` = ".$_POST["get_id_product"]." AND `count` = ".$_POST['arr_delin'][$i]."");
-      }
+
+
+
+  
 
     
     $path = 'i/';
@@ -342,11 +405,10 @@ if ($_FILES['photo_product']['size'] > 0) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  // Загрузка файла и вывод сообщения
 for ($i=0; $i < count($_FILES['ppvkladish4675_photo']) ; $i++) { 
-  # code...
+
  if (!@copy($_FILES['ppvkladish4675_photo']['tmp_name'][$i], $path . $_FILES['ppvkladish4675_photo']['name'][$i])) {
 
-     //echo 'Что-то пошло не так';
-    // $_FILES["ppvkladish4675_photo"]['name'] = "";
+  
 }
 
 else {
@@ -367,8 +429,7 @@ while (($row = $result_set->fetch_assoc()) != false) {
 
       if ($count == $row[count]) { 
         $mysqli->query("UPDATE `pp_vkladish4675` SET `photo` = '".$_FILES['ppvkladish4675_photo']['name'][$count]."' WHERE `count` = '".$count."' AND `product_id_product` = '".$_POST["get_id_product"]."' ");
-        //echo $count."count is";
-        //echo $_FILES['ppvkladish4675_photo']['name'][$count]."photo is";
+      
      }
      
     }
@@ -376,27 +437,6 @@ while (($row = $result_set->fetch_assoc()) != false) {
     }
 
 }
-
-
-/*
-foreach ($_FILES['ppvkladish4675_photo']['size'] as $size) {
-  foreach ($_FILES['ppvkladish4675_photo']['name'] as $name) {
-    if ($size > 0) {
-        $mysqli->query("UPDATE `pp_vkladish4675` SET `photo` = '".$_FILES['ppvkladish4675_photo']['name'][0]."' ");
-      }
-    }
-    }
-*/
-
-
-
-/*
-if ($_FILES['ppvkladish4675_photo']['size'] > 0) {
-  	    
-  	    $mysqli->query("UPDATE `pp_vkladish4675` SET `photo` = '".$_FILES['ppvkladish4675_photo']['name'][0]."' ");
-
-  }
-*/
 
 }
 
@@ -416,16 +456,6 @@ foreach ($_POST[arr_delphoto_count] as $count) {
 }
 
 }
-
-
-/*
-if ($_POST['delete_sphoto'] == 'yes') {
-//echo $_POST['photo_namefordel']."str";
-$mysqli->query(" UPDATE `pp_vkladish4675` SET `photo` = ' ' WHERE `product_id_product` = '".$_POST["get_id_product"]."' ");
-
-}
-*/
-
 $mysqli->close();
 exit;
 }
@@ -497,7 +527,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  if (!@copy($_FILES["ppvkladish4675_photo"]['tmp_name'][$i], $path . $_FILES["ppvkladish4675_photo"]['name'][$i])) {
 
      echo 'Что-то пошло не так';
-    // $_FILES["ppvkladish4675_photo"]['name'] = "";
 }
 
 else {
