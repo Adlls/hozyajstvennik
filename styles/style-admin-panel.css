@@ -466,8 +466,8 @@ height: 650px;
 	width: 90%;
 	height: 70%;
 	margin: 0 auto;
-	margin-top: 20px;
-	border: 0px;
+	margin-top: 5px;
+  border: 0px;
 }
 
 .card_2,.card_3,.card_4,.card_5 {
@@ -493,10 +493,11 @@ height: 650px;
   top: 0px; 
   cursor: pointer;
   height: 26px;
+  right: 200px;
 }
 
 .button_delmb_edit {
-  bottom: -40px;
+  bottom: -52px;
   right: 320px;
 }
 
@@ -505,8 +506,10 @@ height: 650px;
 }
 
 .button_delmb {
-    bottom: 0px;
+    bottom: 5px;
     display: none; 
+    right: 200px;
+
 }
 
 .list_product {
